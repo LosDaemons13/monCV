@@ -1,3 +1,5 @@
 # monCV
 
-Voici mes différents projets effectués par moi-même ou en groupe
+Ce GitHub permet de visualiser les différents projets auquel j'ai pu participer.
+
+Mon portfolio est disponible à cette adresse afin d'apprendre un peu plus à me connaître : https://portfolio-loris.alwaysdata.net/#qualifications
