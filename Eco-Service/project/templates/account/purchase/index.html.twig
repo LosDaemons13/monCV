@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes commandes | Éco-Service{% endblock %}
+
+{% block content %}
+<div class="inner-banner has-base-color-overlay text-center" style="background: url({{ asset('theme/images/background/14.jpg') }});">
+    <div class="container">
+        <div class="box">
+            <h1>Consulter mes commandes</h1>
+        </div>
+    </div>
+</div>
+<div class="breadcumb-wrapper">
+    <div class="container">
+        <div class="pull-left">
+            <ul class="list-inline link-list">
+                <li>
+                    <a href="{{ path('hub') }}">Accueil</a>
+                </li>
+                <li>
+                    <a href="{{ path('app_account')}}">Mon compte</a>
+                </li>
+                <li>
+                    Consulter mes commandes
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div style="margin-left: 10px;margin-top: 10px;">
+    <a href="{{ path('app_account')}}"><i class="fas fa-arrow-circle-left fa-3x" style="color: #8dc63f;" onmouseover="this.style.color='#000000';" onmouseout="this.style.color='#8dc63f';"></i></a>
+</div>
+<div class="container">
+<h1>Mes commandes</h1><br>
+{% if (app.user.customers[0].purchases|length > 0) %}
+    {% for purchase in app.user.customers[0].purchases %}
+        {% if ((purchase.status != notPaidStatus) or (purchase.canceledAt is not null)) %}
+            {% set total = 0 %}
+            {% for purchaseProduct in purchase.purchaseProducts %}
+                    {% set total = total + purchaseProduct.product.price * purchaseProduct.quantity %}
+            {% endfor %}
+            <div style="outline: 2px solid #c6c8ca83;">
+                <ul class="list-group">
+                    <li class="list-group-item" style="background-color:#c6c8ca83;color:#303033;">
+                        <B> Numéro de commande : {{purchase.id}},  Passée le : {{ purchase.createdAt|date("d/m/Y à H:i" ) }},  Total payé: {{total}}€ </B>
+                    </li>
+                    <li class="list-group-item">
+                        Statut : {{ purchase.status.label }}{% if purchase.canceledAt is not null %} | Annulée le : {{ purchase.canceledAt|date('d/m/Y à H:i') }}{% endif %}
+                    </li>
+                    {% for purchaseProduct in purchase.purchaseProducts %}
+                        <li class="list-group-item">
+                            <B><a href="{{ path('individual_product', {id: purchaseProduct.product.id}) }}">
+                                <img 
+                                    src="{{ asset('/assets/uploads/' ~ purchaseProduct.product.productPictures.first().picture.id ~ '.' ~ purchaseProduct.product.productPictures.first().picture.extension) }}" 
+                                    alt="Photo {{ purchaseProduct.product.label }}"
+                                    style="width: 150px;height: 150px;"
+                                >
+                                {{purchaseProduct.product.label}} 
+                            </B></a>
+                            {{ " | Qté : " ~ purchaseProduct.quantity ~ " | Prix : " ~ purchaseProduct.product.price ~"€"}}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %} 
+    {% endfor %} 
+ {% endif %} 
+</div>     
+
+{% endblock %}

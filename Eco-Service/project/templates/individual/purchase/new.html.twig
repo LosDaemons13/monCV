@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vérification | Éco-Service{% endblock %}
+
+{% block content %}
+    <div class="inner-banner has-base-color-overlay text-center" style="background: url({{ asset('theme/images/background/14.jpg') }});">
+        <div class="container">
+            <div class="box">
+                <h1>Valider ma commande</h1>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-wrapper">
+        <div class="container">
+            <div class="pull-left">
+                <ul class="list-inline link-list">
+                    <li>
+                        <a href="{{ path('hub') }}">Accueil</a>
+                    </li>
+                    <li>
+                        Valider ma commande
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <section class="cart-section sec-padd-top">
+        <div class="container">
+            <div class="cart-outer">
+                <div class="table-outer">
+                    <table class="cart-table">
+                        <thead class="cart-header">
+                            <tr>
+                                <th></th>
+                                <th class="prod-column">Produit</th>
+                                <th>&nbsp;</th>
+                                <th>Prix unitaire</th>
+                                <th>Quantité</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% set total = 0 %}
+                        {% for product in cart %}
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td style="text-align: center"><h4 class="prod-title padd-top-20" ><a href="{{ path('individual_product', {id: product.product.id}) }}">{{product.product.label}} </a></h4></td>
+                                <td>&nbsp;</td>
+                                <td class="price">{{ product.product.price }}€</td>
+                                <td class="qty">{{ product.quantity }}</td>
+                                <td class="sub-total"><strong>{{ product.product.price * product.quantity }}€</strong></td>
+                            </tr>
+                            {% set total = total + product.product.price * product.quantity %}
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <h5 style="font-size: 16px;margin-top:30px;">Livraison prévue à l'adresse : <br><br>{{ delivery|raw }}</h5>
+                    <div style="float: right;">
+                        <h3 style="color: #8dc63f; font-weight: 700; font-family: 'Open Sans', sans-serif; margin-top: 50px;">TOTAL À PAYER : {{ total }}€</h3>
+                        <a style="cursor: pointer; margin-bottom: 50px" class="thm-btn" id="checkout-button">Valider ma commande</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://js.stripe.com/v3/"></script>
+    <script type="text/javascript">
+        // Create an instance of the Stripe object with your publishable API key
+        var stripe = Stripe("pk_test_51IQqLmBbRCcpIJeaq08CAA836wizXBrbcWjv3eTYnE5ILNimESmUUYIOoNTzxzNoaSilgTVHxqcd8EpL0g04TOfZ00M4QY6BNz");
+        var checkoutButton = document.getElementById("checkout-button");
+        checkoutButton.addEventListener("click", function () {
+            fetch("/individual/purchase/create-session/{{ purchase.id }}", {
+                method: "POST",
+            }).then(function (response) {
+                return response.json();
+            }).then(function (session) {
+                return stripe.redirectToCheckout({ sessionId: session.id });
+            }).then(function (result) {
+                // If redirectToCheckout fails due to a browser or network
+                // error, you should display the localized error message to your
+                // customer using error.message.
+                if (result.error) {
+                    alert(result.error.message);
+                }
+            }).catch(function (error) {
+                console.error("Error:", error);
+            });
+        });
+    </script>
+{% endblock %}

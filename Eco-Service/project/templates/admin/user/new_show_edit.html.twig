@@ -1,0 +1,131 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Utilisateurs | BackOffice{% endblock %}
+
+{% block content %}
+    <div class="row my-4 align-items-center">
+        <div class="col-6">
+            {% if user.id is null and form is defined %}
+                <h2><i class="fas fa-plus mr-2"></i>Ajouter un utilisateur</h2>
+            {% endif %}
+            {% if user.id is not null and form is not defined %}
+                <h2><i class="fas fa-eye mr-2"></i>Détails d'un utilisateur</h2>
+            {% endif %}
+            {% if user.id is not null and form is defined %}
+                <h2><i class="fas fa-pen mr-2"></i>Édition d'un utilisateur</h2>
+            {% endif %}
+        </div>
+        <div class="col-6">
+            <a type="button" class="btn btn-primary float-right" href="{{ path('admin_user_index') }}"><i class="fas fa-backspace mr-2"></i>Retour à la liste des utilisateurs</a>
+        </div>
+    </div>
+
+    {# Add user (worker) #}
+    {% if user.id is null and form is defined %}
+        {{ form_start(form, {'method': 'POST'}) }}
+            {{ form_row(form.firstname) }}
+            {{ form_row(form.lastname) }}
+            {{ form_row(form.birthdate) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.password) }}
+            {{ form_row(form.phone) }}
+            {{ form_row(form.roles) }}
+            {{ form_row(form._token) }}
+            {{ form_row(form.submit) }}
+        {{ form_end(form, {'render_rest': false}) }}
+    {% endif %}
+
+    {# Show user #}
+    {% if user.id is not null and form is not defined %}
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Prénom</th>
+                    <td>{{ user.firstname }}</td>
+                </tr>
+                <tr>
+                    <th>Nom</th>
+                    <td>{{ user.lastname }}</td>
+                </tr>
+                <tr>
+                    <th>Date de naissance</th>
+                    <td>{{ user.birthdate|date('d/m/Y') }}</td>
+                </tr>
+                <tr>
+                    <th>E-mail</th>
+                    <td>{{ user.email }}</td>
+                </tr>
+                <tr>
+                    <th>Téléphone</th>
+                    <td>{{ user.phone }}</td>
+                </tr>
+                <tr>
+                    <th>Créé le</th>
+                    <td>{{ user.createdAt ? user.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Modifié le</th>
+                    <td>{{ user.updatedAt ? user.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Supprimé le</th>
+                    <td>{{ user.deletedAt ? user.deletedAt|date('Y-m-d H:i:s') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Cause suppression</th>
+                    <td>{{ user.deletedFor }}</td>
+                </tr>
+                <tr>
+                    <th>Rôle</th>
+                    <td>
+                        {% for role in user.roles %}
+                        {{ role }}
+                        {% endfor %}
+                    </td>
+                </tr>
+                {% if user.customers %}
+                    {% for customer in user.customers %}
+                    <tr>
+                        <th>Entreprise</th>
+                        <td>{{ customer.companyName }}</td>
+                        <td>{{ customer.companySiret }}</td>
+                    </tr>
+                {% endfor %} {% endif %}
+            </tbody>
+        </table>
+
+        <a type="button" class="btn btn-warning mb-2" href="{{ path('admin_user_edit', {'id': user.id}) }}"><i class="fas fa-lock mr-2"></i>Éditer cet utilisateur</a>
+
+        <form method="post" action="{{ path('admin_user_delete', {'id': user.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+            <a type="button" class="btn btn-danger" href="{{ path('admin_user_index') }}"><i class="fas fa-trash mr-2"></i>Supprimer cet utilisateur</a>
+        </form>
+    {% endif %}
+
+
+    {# Edit user #}
+    {% if user.id is not null and form is defined %}
+        {{ form_start(form, {'method': 'POST'}) }}
+            {{ form_row(form.firstname) }}
+            {{ form_row(form.lastname) }}
+            {{ form_row(form.birthdate) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.phone) }}
+            {{ form_row(form.company_name) }}
+            {{ form_row(form.company_siret) }}
+            {{ form_row(form.roles) }}
+            {{ form_row(form._token) }}
+            {{ form_row(form.submit) }}
+        {{ form_end(form, {'render_rest': false}) }}
+
+        <a type="button" class="btn btn-warning mb-2" href="{{ path('admin_user_edit_password', {'id': user.id}) }}"><i class="fas fa-lock mr-2"></i>Modifier le mot de passe</a>
+
+        <form method="post" action="{{ path('admin_user_delete', {'id': user.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+            <a type="button" class="btn btn-danger" href="{{ path('admin_user_index') }}"><i class="fas fa-trash mr-2"></i>Supprimer cet utilisateur</a>
+        </form>
+    {% endif %}
+
+{% endblock %}

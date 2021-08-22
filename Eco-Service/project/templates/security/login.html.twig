@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion - Eco-Service{% endblock %}
+
+{% block content %}
+    <div class="inner-banner has-base-color-overlay text-center" style="background: url({{ asset('theme/images/background/14.jpg') }});">
+        <div class="container">
+            <div class="box">
+                <h1>Connexion</h1>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-wrapper">
+        <div class="container">
+            <div class="pull-left">
+                <ul class="list-inline link-list">
+                    <li>
+                        <a href="{{ path('hub') }}">Accueil</a>
+                    </li>
+                    <li>
+                        Connexion
+                    </li>
+                </ul>
+            </div>
+            <div class="pull-right">
+                <a href="{{ path('app_register') }}" class="get-qoute"><i class="fa fa-arrow-circle-right"></i>Pas encore de compte ? Je m'inscris</a>
+            </div>
+        </div>
+    </div>
+    <section class="register-section">
+        <div class="container">
+            <div class="row">
+                <div class="form-column column col-12"></div>
+                    <div class="styled-form login-form">
+                        <form method="post">
+                            {% if error %}
+                                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                            {% endif %}
+                            {% if app.user %}
+                                <div class="mb-3">
+                                    You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                                </div>
+                            {% endif %}
+                            <div class="form-group">
+                                <span class="adon-icon"><span class="fa fa-envelope-o"></span></span>
+                                <input type="text" value="{{ last_username }}" name="email" placeholder="Adresse Email.." required autofocus>
+                            </div>
+                            <div class="form-group">
+                                <span class="adon-icon"><span class="fa fa-unlock-alt"></span></span>
+                                <input type="password" name="password" id="inputPassword"  placeholder="Mot de passe.." required>
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                            </div>
+                            <div class="clearfix">
+                                <div class="form-group pull-left">
+                                    <button type="submit" class="thm-btn thm-tran-bg">Se connecter</button>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <div class="pull-left">
+                                    <div class="checkbox mb-3">
+                                        <label>
+                                            {#
+                                            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                                            See https://symfony.com/doc/current/security/remember_me.html
+                                            <input type="checkbox" name="_remember_me" id="remember-me"><label for="remember-me">&nbsp; Se souvenir de moi</label>
+                                            #}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

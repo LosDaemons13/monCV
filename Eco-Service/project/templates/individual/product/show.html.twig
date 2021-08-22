@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.label }} | Éco-Service{% endblock %}
+
+{% block content %}
+    <div class="inner-banner has-base-color-overlay text-center" style="background: url({{ asset('theme/images/background/19.png') }});">
+        <div class="container">
+            <div class="box">
+                <h1>{{ product.label }}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-wrapper">
+        <div class="container">
+            <div class="pull-left">
+                <ul class="list-inline link-list">
+                    <li>
+                        <a href="{{ path('hub')}}">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('individual_products', {category_id:'all'})}}">Nos produits</a>
+                    </li>
+                    <li>
+                        {{ product.label }}
+                    </li>
+                </ul>
+            </div>
+            <div class="pull-right">
+                <a href="{{ path('individual_cart')}}" class="get-qoute"><i class="fa fa-arrow-circle-right"></i>Accéder à mon panier</a>
+            </div>
+        </div>
+    </div>
+    <section class="shop-single-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-12 col-xs-12 sidebar_styleTwo">
+                    <div class="wrapper shop-sidebar">
+                        <div class="sidebar_search">
+                            {{ form_start(form, {'method': 'GET'}) }}
+                            {{ form_widget(form.string) }}
+                            {{ form_widget(form.submit, {'attr': {'class': 'tran3s color1_bg'}}) }}
+                            {{ form_end(form, {'render_rest': false}) }}
+                        </div> <br><br>
+                        <div class="category-style-one">
+                            <div class="section-title style-2">
+                                <h4>Categories</h4>
+                            </div>
+                            <ul class="list">
+                                <li><a href="{{ path('individual_products', {category_id: 'all'}) }}">Toutes les catégories</a></li>
+                                {% for category in categories %}
+                                    <li><a href="{{ path('individual_products', {category_id: category.id}) }}">{{ category.label }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div class="single-products-details">
+                        <div class="product-content-box">
+                            <div class="row">
+                                <div class="col-md-6 img-box">
+                                    <div class="img-box">
+                                       <img id="main_pic" style="height: 270px;" src="{{ asset('/assets/uploads/' ~ product.productPictures[0].picture.id ~ '.' ~ product.productPictures[0].picture.extension) }}" alt="" data-imagezoom="true" class="img-responsive">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="content-box">
+                                        <h3>{{ product.label }}</h3>
+                                        <span class="price">{{ product.price }}€</span>
+                                        <div class="text" style="text-align: justify;">
+                                            <p>{{ product.description | raw}}</p>
+                                        </div>
+                                        <div class="location-box">
+                                            {% if product.stock < 20 %}
+                                                <p class="text-danger">Attention, plus que {{ product.stock }} en stock !</p>
+                                            {% endif %}
+                                            <form action="#">
+                                                Indiquez la quantité:
+                                                <input id="quantity" type="number" placeholder="1" value="" min="1" max="{{ product.stock }}" style="margin-bottom: 10px;">
+                                                <input type="hidden" value="{{ product.id }}">
+                                                <span>Livraison 4 à 10 jours</span>
+                                            </form>
+                                        </div>
+                                        <div class="addto-cart-box">
+                                            <a href="{{ path('individual_add_to_cart', {id: product.id, quantity: 1}) }}" id="add_to_cart" class="thm-btn">Ajouter au panier</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 35px;">
+                                {% for productPicture in product.productPictures %}
+                                    <img style="cursor: pointer;" src="{{ asset('/assets/uploads/' ~ productPicture.picture.id ~ '.' ~ productPicture.picture.extension) }}" height="50" onclick="select_pic(this.src)" alt="">
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/product.js') }}"></script>
+{% endblock %}

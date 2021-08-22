@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ service.label }} | Éco-Service{% endblock %}
+
+{% block content %}
+    <div class="inner-banner has-base-color-overlay text-center" style="background: url({{ asset('theme/images/background/14.jpg') }});">
+        <div class="container">
+            <div class="box">
+                <h1>{{ service.label }}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-wrapper">
+        <div class="container">
+            <div class="pull-left">
+                <ul class="list-inline link-list">
+                    <li>
+                        <a href="{{ path('hub') }}">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('professional_home') }}">Nos Services</a>
+                    </li>
+                    <li>
+                        {{ service.label }}
+                    </li>
+                </ul>
+            </div>
+            <div class="pull-right">
+                <a href="{{ path('professional_request') }}" class="get-qoute"><i class="fa fa-arrow-circle-right"></i>Faire une demande de devis</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="default-section sec-padd">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="default-sidebar">
+                        <ul class="service-catergory">
+                            {% for s in services %}
+                                <li class="{{ s.id == service.id ? 'active' : '' }}"><a href="{{ path('professional_service', {id: s.id}) }}">{{ s.label }}</a></li>
+                            {% endfor %}
+                        </ul>
+                        <div class="link"><a href="{{ path('professional_request') }}" class="thm-btn style-2">Demander un devis</a></div><br><br/>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-sm-12">
+                    <div class="single-service">
+                        <div class="row mb-30">
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <div class="img-box">
+                                    <img id="main_pic" style="height: 270px;" src="{{ asset('/assets/uploads/' ~ service.servicePictures[0].picture.id ~ '.' ~ service.servicePictures[0].picture.extension) }}" alt="" data-imagezoom="true" class="img-responsive">>
+                                </div>
+                            </div>
+                            <div class="col-md-7 col-sm-7 col-xs-12" >
+                                <h2>{{ service.label }}</h2><br>
+                                <div class="text" style="text-align: justify;">
+                                    <p>{{ service.description | raw  }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

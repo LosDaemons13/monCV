@@ -1,0 +1,149 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact | Éco-Service{% endblock %}
+
+{% block content %}
+    <div class="inner-banner has-base-color-overlay text-center" style="background: url({{ asset('theme/images/background/14.jpg') }});">
+        <div class="container">
+            <div class="box">
+                <h1>Contactez-nous</h1>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-wrapper">
+        <div class="container">
+            <div class="pull-left">
+                <ul class="list-inline link-list">
+                    <li>
+                        <a href="index.html">Accueil</a>
+                    </li>
+                    <li>
+                        Contact
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <section class="get-touch-area">
+        <div class="container">
+            <div class="sec-title text-center">
+                <h1>Laissez-nous un message</h1>
+                <span class="border"></span>
+                <p>Si vous avez des questions, des remarques ou tous autre message a nous faire passer, remplissez le formulaire de contact ci-dessous.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="single-item hvr-grow-shadow text-center">
+                        <div class="icon-holder">
+                            <span class="icon-signs2"></span>
+                        </div>
+                        <div class="text-holder">
+                            <h3>Adresse</h3>
+                            <span class="border"></span>
+                            <p>21 Rue Marc Donadille<br> 13013 Marseille, France</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-item hvr-grow-shadow text-center">
+                        <div class="icon-holder">
+                            <span class="icon-technology"></span>
+                        </div>
+                        <div class="text-holder">
+                            <h3>Contact</h3>
+                            <span class="border"></span>
+                            <p>Tèl: +33 6 01 02 03 04 <br>Email: contact@eco-service.pac.center</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-item hvr-grow-shadow text-center">
+                        <div class="icon-holder">
+                            <span class="icon-clock"></span>
+                        </div>
+                        <div class="text-holder">
+                            <h3>Horaires</h3>
+                            <span class="border"></span>
+                            <p>Du lundi au vendredi: Ouvert de 8h00 à 17h00 <br>Le week-end: Fermé</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact-form-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="default-form-area" id="mail_form_area" style="padding: 28px;">
+                        <form id="form_contact" class="default-form" action="{{ path('send_mail') }}">
+                            <div class="row clearfix">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <input type="text" name="form_name" class="form-control" placeholder="Votre nom *" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <input type="email" name="form_email" class="form-control required email" placeholder="Votre adresse email *" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <input type="text" name="form_phone" class="form-control" placeholder="Votre n° de téléphone">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <input type="text" name="form_subject" class="form-control" placeholder="Le sujet du message">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <textarea name="form_message" class="form-control textarea required" placeholder="Votre message.... *"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-group center">
+                                        <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden">
+                                        <input id="g-recaptcha-response" name="g-recaptcha-response" type="hidden">
+                                        <button class="thm-btn style-2" type="submit">Envoyer</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="home-google-map">
+        <div
+                class="google-map"
+                id="contact-google-map"
+                data-map-lat="43.34566938828913"
+                data-map-lng="5.429553226644602"
+                data-icon-path="{{ asset('theme/images/logo/map-marker.png') }}"
+                data-map-title="Marseille"
+                data-map-zoom="11" >
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/contact.js') }}"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKGL2so6CekRO5_QRcdfceCmnLptLt764"></script>
+    <script src="{{ asset('theme/js/gmap.js') }}"></script>
+    <script src="{{ asset('theme/js/default-map.js') }}"></script>
+
+     <script src="https://www.google.com/recaptcha/api.js?render=6LcTLnEaAAAAACgMNU3Ja7XsZMvFvY-JYOrGUJsI"></script>
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LcTLnEaAAAAACgMNU3Ja7XsZMvFvY-JYOrGUJsI', {action: '{{ path('send_mail') }}'}).then(function(token) {
+                document.getElementById('g-recaptcha-response').value = token;
+                console.log(token)
+            });
+        });
+  </script>
+{% endblock %}

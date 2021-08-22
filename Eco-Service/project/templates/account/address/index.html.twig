@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes adresses | Éco-Service{% endblock %}
+
+{% block content %}
+<div class="inner-banner has-base-color-overlay text-center" style="background: url({{ asset('theme/images/background/14.jpg') }});">
+    <div class="container">
+        <div class="box">
+            <h1>Modifier/Ajouter une adresse</h1>
+        </div>
+    </div>
+</div>
+<div class="breadcumb-wrapper">
+    <div class="container">
+        <div class="pull-left">
+            <ul class="list-inline link-list">
+                <li>
+                    <a href="{{ path('hub') }}">Accueil</a>
+                </li>
+                <li>
+                    <a href="{{ path('app_account')}}">Mon compte</a>
+                </li>
+                <li>
+                    Modifier/Ajouter une adresse
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div style="margin-left: 10px;margin-top: 10px;">
+    <a href="{{ path('app_account')}}"><i class="fas fa-arrow-circle-left fa-3x" style="color: #8dc63f;" onmouseover="this.style.color='#000000';" onmouseout="this.style.color='#8dc63f';"></i></a>
+</div>
+<div class="container">
+    <h1>Mes adresses</h1>
+    {% if (app.user.customers[0].addresses|length > 0) %}
+        <table class="cart-table">
+            <thead class="cart-header">
+            <tr>
+                <th>Nom de l'adresse</th>
+                <th>Identité</th>
+                <th class="price">Numéro de rue</th>
+                <th>Rue</th>
+                <th class="price">Code postal</th>
+                <th>Ville</th>
+                <th>Pays</th>
+                <th>Opérations</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for address in app.user.customers[0].addresses %}
+                {% if address.deletedAt is null %}
+                <tr>
+                    <td>{{ address.label }}</td>
+                    <td>{{ address.firstName ~ " " ~ address.lastName}}</td>
+                    <td align="center">{{ address.streetNumber }}</td>
+                    <td>{{ address.street }}</td>
+                    <td align="center">{{ address.postalCode }}</td>
+                    <td>{{ address.city }}</td>
+                    <td>{{ address.country }}</td>
+                    <td align="center">
+                        <a href="{{ path('app_account_address_edit', {id: address.id}) }}"><i class="fa fa-edit fa-lg" style="color: #8dc63f;" onmouseover="this.style.color='#000000';" onmouseout="this.style.color='#8dc63f';"></i>   </a>
+                        <a href="{{ path('app_account_address_delete', {id: address.id}) }}"><i class="fa fa-trash-alt fa-lg" style="color: #C70000;" onmouseover="this.style.color='#000000';" onmouseout="this.style.color='#C70000';"></i>{#<img src="{{ asset('theme/images/icons/x-button.png') }}">#}</a>
+                    </td>
+                </tr>
+                {% endif %}                 
+            {% endfor %}
+            </tbody>
+        </table>
+        <br>
+    {% else %}
+        <p>Vous n'avez pas encore d'adresse dans votre compte</p>
+    {% endif %}
+            <a class="text-link" href="{{ path('app_account_address_new') }}"><i class="fas fa-plus-circle fa-2x" style="color: #8dc63f;" onmouseover="this.style.color='#000000';" onmouseout="this.style.color='#8dc63f';"></i>&nbsp;&nbsp;&nbsp;Ajouter addresse</a><br>
+        <br>
+    </div>
+    {% endblock %}

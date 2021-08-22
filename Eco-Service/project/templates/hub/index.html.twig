@@ -1,0 +1,265 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Eco-Service{% endblock %}
+
+{% block content %}
+    <section class="rev_slider_wrapper">
+        <div id="slider1" class="rev_slider" data-version="5.0">
+            <ul>
+                <li data-transition="fade">
+                    <img src="{{ asset('theme/images/slider/9.jpg') }}" alt="" width="1920" height="888" data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="1" >
+                    <div class="tp-caption  tp-resizeme"
+                         data-x="left" data-hoffset="15"
+                         data-y="top" data-voffset="260"
+                         data-transform_idle="o:1;"
+                         data-transform_in="x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
+                         data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+                         data-mask_in="x:[100%];y:0;s:inherit;e:inherit;"
+                         data-splitin="none"
+                         data-splitout="none"
+                         data-responsive_offset="on"
+                         data-start="700">
+                        <a href="{{ path('individual_products', {category_id:'all'}) }}"><div class="slide-content-box">
+                            <h1>Bienvenue<span>... chez Eco-Service</span></h1>
+                            <h3>Venez découvrir notre section produits</h3>
+                            <p>Et notre gamme de produits 100% eco-friendly <br>dont la conception respecte l'environnement...  </p>
+                            </div></a>
+                    </div>
+                    <div class="tp-caption tp-resizeme"
+                         data-x="left" data-hoffset="15"
+                         data-y="top" data-voffset="480"
+                         data-transform_idle="o:1;"
+                         data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                         data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+                         data-splitin="none"
+                         data-splitout="none"
+                         data-responsive_offset="on"
+                         data-start="2300">
+                        <div class="slide-content-box">
+                            <div class="button">
+                                <a class="thm-btn" href="{{ path('individual_products', {category_id:'all'}) }}">C'est parti</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li data-transition="fade">
+                   <img src="{{ asset('theme/images/slider/8.jpg') }}"  alt="" width="1920" height="888" data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="1" >
+                    <div class="tp-caption  tp-resizeme"
+                         data-x="center" data-hoffset=""
+                         data-y="top" data-voffset="275"
+                         data-transform_idle="o:1;"
+                         data-transform_in="x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
+                         data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+                         data-mask_in="x:[100%];y:0;s:inherit;e:inherit;"
+                         data-splitin="none"
+                         data-splitout="none"
+                         data-responsive_offset="on"
+                         data-start="700">
+                        <a href="{{ path('professional_home') }}"><div class="slide-content-box center">
+                            <h2>Jetez un œil à nos services ! </h2>
+                            <p>Nous proposons toute une liste de services <br>en adéquation avec notre démarche éco-responsable... </p>
+                            </div></a>
+                    </div>
+                    <div class="tp-caption tp-resizeme"
+                         data-x="center"
+                         data-y="top" data-voffset="450"
+                         data-transform_idle="o:1;"
+                         data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                         data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+                         data-splitin="none"
+                         data-splitout="none"
+                         data-responsive_offset="on"
+                         data-start="2300">
+                        <div class="slide-content-box">
+                            <div class="button">
+                                <a class="thm-btn" href="{{ path('professional_home') }}">En savoir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li data-transition="fade">
+                    <img src="{{ asset('theme/images/slider/11.png') }}"  alt="" width="1920" height="888" data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="1" >
+                    <div class="tp-caption  tp-resizeme"
+                         data-x="left" data-hoffset="500"
+                         data-y="top" data-voffset="260"
+                         data-transform_idle="o:1;"
+                         data-transform_in="x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
+                         data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+                         data-mask_in="x:[100%];y:0;s:inherit;e:inherit;"
+                         data-splitin="none"
+                         data-splitout="none"
+                         data-responsive_offset="on"
+                         data-start="700">
+                        <a href="{{ path('app_contact') }}"><div class="slide-content-box">
+                            <h1>Un projet ?<span>... Une envie ?</span></h1>
+                            <h3>Laissez-nous un message</h3>
+                            <p>Utilisez notre formulaire de contact, <br>et nous serons ravis de vous répondre...  </p>
+                        </div></a>
+                    </div>
+                    <div class="tp-caption tp-resizeme"
+                         data-x="left" data-hoffset="500"
+                         data-y="top" data-voffset="480"
+                         data-transform_idle="o:1;"
+                         data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                         data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+                         data-splitin="none"
+                         data-splitout="none"
+                         data-responsive_offset="on"
+                         data-start="2300">
+                        <div class="slide-content-box">
+                            <div class="button">
+                                <a class="thm-btn" href="{{ path('app_contact') }}">J'y vais</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="service sec-padd3">
+        <div class="container">
+            <div class="section-title center">
+                <h2>Nous sommes Eco-Service, notre mission est <span class="thm-color">de proposer des services et des produits éco-responsables</span> dans le monde !</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-x-12">
+                    <div class="service-item center">
+                        <div class="icon-box">
+                            <span class="icon-tool"></span>
+                        </div>
+                        <h4>Éco-System</h4>
+                        <p>Nous vous proposons d'économiser sur votre budget annuel grâce à Eco-Panneau qui recycle l'énergie solaire en électricité !</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-x-12">
+                    <div class="service-item center">
+                        <div class="icon-box">
+                            <span class="icon-nature-1"></span>
+                        </div>
+                        <h4>Recyclage de l'eau</h4>
+                        <p>Nous vous proposons d'économiser sur votre budget annuel grâce à Eco-eau qui recycle votre eau !</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-x-12">
+                    <div class="service-item center">
+                        <div class="icon-box">
+                            <span class="icon-can"></span>
+                        </div>
+                        <h4>Contrôle du chauffage</h4>
+                        <p>Nous vous proposons d'économiser sur votre budget annuel grâce à Eco-Clim qui va gérer intelligemment votre chauffage et climatisation !</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-x-12">
+                    <div class="service-item center">
+                        <div class="icon-box">
+                            <span class="icon-deer"></span>
+                        </div>
+                        <h4>Planter des arbres</h4>
+                        <p>Eco-Nature vous propose de planter des arbres et plantes dans des zones naturelles pour le bien de notre planète.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="fact-counter style-2 sec-padd" style="background-image: url(images/background/5.jpg);">
+        <div class="container">
+            <div class="section-title center">
+                <h2>Pour mieux nous connaitre !</h2>
+            </div>
+            <div class="row clearfix">
+                <div class="counter-outer clearfix">
+                    <article class="column counter-column col-md-3 col-sm-6 col-xs-12 wow fadeIn" data-wow-duration="0ms">
+                        <div class="item">
+                            <div class="icon"><i class="icon-heart2"></i></div>
+                            <div class="count-outer"><span class="count-text" data-speed="3000" data-stop="30">0</span>+</div>
+                            <h4 class="counter-title">Années d'expérience</h4>
+                        </div>
+                    </article>
+                    <article class="column counter-column col-md-3 col-sm-6 col-xs-12 wow fadeIn" data-wow-duration="0ms">
+                        <div class="item">
+                            <div class="icon"><i class="icon-money"></i></div>
+                            <div class="count-outer">$<span class="count-text" data-speed="3000" data-stop="87459">0</span></div>
+                            <h4 class="counter-title">Nos Fonds collectés ce mois-ci</h4>
+                        </div>
+                    </article>
+                    <article class="column counter-column col-md-3 col-sm-6 col-xs-12 wow fadeIn" data-wow-duration="0ms">
+                        <div class="item">
+                            <div class="icon"><i class="icon-people3"></i></div>
+                            <div class="count-outer"><span class="count-text" data-speed="3000" data-stop="58745">0</span></div>
+                            <h4 class="counter-title">Notre clientèle Eco-Service</h4>
+                        </div>
+                    </article>
+                    <article class="column counter-column col-md-3 col-sm-6 col-xs-12 wow fadeIn" data-wow-duration="0ms">
+                        <div class="item">
+                            <div class="icon"><i class="icon-animals"></i></div>
+                            <div class="count-outer"><span class="count-text" data-speed="3000" data-stop="300">0</span>%</div>
+                            <h4 class="counter-title">Satisfaction de notre clientèle</h4>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about sec-padd2">
+        <div class="container">
+            <div class="section-title center">
+                <h2>Quelques mots pour vous</h2>
+                <p>Chaque choix de votre part compte ! Choississez un produit ou un service et aidez-nous à changez le monde</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <figure class="img-box">
+                        <img src="{{ asset('theme/images/resource/13.jpg') }}" alt="">
+                    </figure>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="content">
+                        <h2>Ensemble nous pouvons faire la différence</h2>
+                        <div class="text">
+                            <p>La démarche d'Eco-Service est de rendre le monde meilleur grâce à des produits et des services éco-responsables. Il nous tient à coeur de changer les choses, et grâce à vous, oui vous qui nous aidez à l'achat d'un produit ou d'un service, vous faites travailler des milliers d'entreprise, vous donnez du travail, vous améliorez les conditions de vie sur cette planète et surtout vous la sauvez ! Chaque dollar que vous dépensez dans nos produits et nos services nous aide énormément pour mettre en place nos solutions éco-responsables. Nous travaillons avec plus de 150 partenaires sur plus de 300 projets éco-responsables dans le monde. Nous sommes Eco-Service !  </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="why-chooseus">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="item">
+                        <div class="inner-box">
+                            <div class="icon_box">
+                                <span class="icon-shapes"></span>
+                            </div>
+                            <a href="{{ path('individual_products', {category_id:'all'}) }}"><h4>L'achat d'un produit ?</h4></a>
+                        </div>
+                        <div class="text"><p>Vous contribuez à l'amélioration de la planète et à son éco-système. De part l'utilisation quotidienne de produits éco-responsables !  </p></div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="item">
+                        <div class="inner-box">
+                            <div class="icon_box">
+                                <span class="icon-star"></span>
+                            </div>
+                            <a href="{{ path('professional_home') }}"><h4>L'achat d'un service ?</h4></a>
+                        </div>
+                        <div class="text"><p>Vous contribuez à rendre les conditions de vie meilleures et plus économes et surtout vous faites travailler des milliers d'entreprises !  </p></div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="item">
+                        <div class="inner-box">
+                            <div class="icon_box">
+                                <span class="icon-people-1"></span>
+                            </div>
+                            <a href="{{ path('professional_request') }}"><h4>Faire un devis ?</h4></a>
+                        </div>
+                        <div class="text"><p>Vous contribuez à soliciter nos équipes qui vont travailler pour vous trouver les meilleurs services rapports qualité/prix !  </p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

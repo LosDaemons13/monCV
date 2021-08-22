@@ -1,0 +1,49 @@
+# No prefix for Hub Route
+hub:
+    resource: ../../src/Controller/HubController.php
+    type: annotation
+
+contact:
+    resource: ../../src/Controller/ContactController.php
+    type: annotation
+
+security:
+    resource: ../../src/Controller/SecurityController.php
+    type: annotation
+
+account:
+    resource: ../../src/Controller/AccountController.php
+    type: annotation
+
+account_address:
+    resource: ../../src/Controller/AccountAddressController.php
+    type: annotation
+
+account_purchase:
+    resource: ../../src/Controller/AccountPurchaseController.php
+    type: annotation
+
+# Admin prefix for all controllers in Admin Folder
+admin:
+    resource: '../../src/Controller/Admin/'
+    type: annotation
+    prefix: '/admin'
+    name_prefix: 'admin_'
+
+# Individual prefix for all controllers in Individual Folder
+individual:
+    resource: '../../src/Controller/Individual/'
+    type: annotation
+    prefix: '/individual'
+    name_prefix: 'individual_'
+
+# Professional prefix for all controllers in Professional Folder
+professional:
+    resource: '../../src/Controller/Professional/'
+    type: annotation
+    prefix: '/professional'
+    name_prefix: 'professional_'
+
+kernel:
+    resource: ../../src/Kernel.php
+    type: annotation

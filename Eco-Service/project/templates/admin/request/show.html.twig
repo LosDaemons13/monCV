@@ -1,0 +1,52 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Requête | BackOffice{% endblock %}
+
+{% block content %}
+    <h1>Requête</h1>
+    <a href="{{ path('admin_request_index') }}">Retour à la liste des requêtes</a>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Entreprise</th>
+                <td>{{ request.customer.companyName }}</td>
+                <td>{{ request.customer.companySiret }}</td>
+                <td>{{ request.customer.user.firstname }}</td>
+                <td>{{ request.customer.user.lastname }}</td>
+                <td>{{ request.customer.user.email }}</td>
+                <td>{{ request.customer.user.phone }}</td>
+            </tr>
+            <tr>
+                <th>Service associé</th>
+                <td>{{ request.service.label }}</td>
+            </tr>
+            <tr>
+                <th>Message</th>
+                <td>{{ request.message }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>
+                    <form method="post" action="{{ path('admin_request_edit', {'id': request.id}) }}">
+                        <select name="status[{{ request.id }}]">    
+                            {% for status in requestStatus %}    
+                                <option value="{{ status.id }}" {{ (request.status.id == status.id) ? 'selected' : ''}}>{{ status.label }}</option>
+                            {% endfor %}
+                        </select>
+                        <button type="submit">Valider</button>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ request.createdAt ? request.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form method="post" action="{{ path('admin_request_delete', {'id': request.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ request.id) }}">
+        <button class="btn">Supprimer</button>
+    </form>
+{% endblock %}

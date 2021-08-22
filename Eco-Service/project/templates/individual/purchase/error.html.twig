@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur | Éco-Service{% endblock %}
+
+{% block content %}
+    <div class="inner-banner has-base-color-overlay text-center" style="background: url({{ asset('theme/images/background/14.jpg') }});">
+        <div class="container">
+            <div class="box">
+                <h1>Annulation du paiement</h1>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-wrapper">
+        <div class="container">
+            <div class="pull-left">
+                <ul class="list-inline link-list">
+                    <li>
+                        <a href="{{ path('hub') }}">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('app_account')}}">Mon compte</a>
+                    </li>
+                    <li>
+                        Annulation du paiement
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 50px; margin-bottom: 50px">
+        <a href="{{ path('individual_purchase') }}" class="thm-btn">Réessayer le paiement</a>
+    </div>
+{% endblock %}

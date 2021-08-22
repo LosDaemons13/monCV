@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos produits | Éco-Service{% endblock %}
+
+{% block content %}
+    <div class="inner-banner has-base-color-overlay text-center" style="background: url({{ asset('theme/images/background/14.jpg') }});">
+        <div class="container">
+            <div class="box">
+                <h1>Nos produits</h1>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-wrapper">
+        <div class="container">
+            <div class="pull-left">
+                <ul class="list-inline link-list">
+                    <li>
+                        <a href="{{ path('hub') }}">Accueil</a>
+                    </li>
+                    <li>
+                        Nos produits
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="shop sec-padd">
+        <div class="container">
+            <div>
+                <div class="col-md-3 col-sm-12 col-xs-12 sidebar_styleTwo">
+                    <div class="wrapper shop-sidebar">
+                        <div class="sidebar_search">
+                            {{ form_start(form, {'method': 'GET'}) }}
+                            {{ form_widget(form.string) }}
+                            {{ form_widget(form.submit, {'attr': {'class': 'tran3s color1_bg'}}) }}
+                            {{ form_end(form, {'render_rest': false}) }}
+                        </div> <br><br>
+                            <div class="category-style-one">
+                                <div class="section-title style-2">
+                                    <h4>Categories</h4>
+                                </div>
+                                <ul class="list">
+                                    <li><a href="{{ path('individual_products', {category_id: 'all'}) }}">Toutes les catégories</a></li>
+                                    {% for category in categories %}
+                                        <li class="{{ category_id == category.id ? 'active' : '' }}"><a href="{{ path('individual_products', {category_id: category.id}) }}">{{ category.label }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div>
+                        {% for product in products %}
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="single-shop-item">
+                                <div class="img-box">
+                                    <img height="270" src="{{ asset('/assets/uploads/' ~ product.productPictures.first().picture.id ~ '.' ~ product.productPictures.first().picture.extension) }}" alt="Photo {{ product.label }}"></a>
+                                    <figcaption class="overlay">
+                                        <div class="box">
+                                            <div class="content">
+                                                <a href="{{ path('individual_product', {id: product.id}) }}"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </figcaption>
+                                </div>
+                                <div class="content-box">
+                                    <div class="inner-box">
+                                    <div style="height: 40px"><h4><a href="{{ path('individual_product', {id: product.id}) }}">{{ product.label }}</a></h4></div>
+                                        <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ product.description }}</div>
+                                    
+                                        <div class="item-price">
+                                            <strong>{{ product.price }}€</strong>
+                                        </div>
+                                    </div>
+                                    <div class="price-box">
+                                        {% if product.stock < 20 %}
+                                            <p class="text-danger">Plus que <strong>{{ product.stock }}</strong> en stock</p>
+                                        {% endif %}
+                                        <div style="height: 60px">
+                                            <p class="text-muted">
+                                                {% for category in product.productCategories %}
+                                                    {{ category.label }}
+                                                    {% if loop.last == false  %},{% endif%}
+                                                {% endfor %}
+                                            </p>
+                                        </div>
+                                        <br>
+                                        <a href="{{ path('individual_add_to_cart', {id: product.id, quantity: 1}) }}" class="cart-btn"><i class="fa fa-shopping-cart"></i>Ajouter au panier</a><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% if products is empty  %}
+                            <h2>Aucun produit ne correspond à votre recherche..</h2>
+                        {% endif%}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

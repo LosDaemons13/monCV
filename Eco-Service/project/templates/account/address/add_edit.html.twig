@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes adresses | Éco-Service{% endblock %}
+
+{% block content %}
+ <div class="inner-banner has-base-color-overlay text-center" style="background: url({{ asset('theme/images/background/14.jpg') }});">
+  <div class="container">
+   <div class="box">
+    <h1>Ajouter une adresse</h1>
+   </div>
+  </div>
+ </div>
+ <div class="breadcumb-wrapper">
+  <div class="container">
+   <div class="pull-left">
+    <ul class="list-inline link-list">
+     <li>
+      <a href="{{ path('hub') }}">Accueil</a>
+     </li>
+     <li>
+      <a href="{{ path('app_account') }}">Mon compte</a>
+     </li>
+     <li>
+      Ajouter une adresse
+     </li>
+    </ul>
+   </div>
+  </div>
+ </div>
+ <section class="register-section" style="margin-top: 50px;">
+  <div class="container">
+   <a href="{{ path('app_account_address')}}"><i class="fas fa-arrow-circle-left fa-3x" style="color: #8dc63f;" onmouseover="this.style.color='#373835';" onmouseout="this.style.color='#8dc63f';"></i></a>
+   <div class="row" style="margin-top:50px;">
+    <div class="form-column column col-12">
+     <div class="styled-form register-form">
+      {{ form(form) }}
+     </div>
+    </div>
+   </div>
+  </div>
+ </section>
+{% endblock %}

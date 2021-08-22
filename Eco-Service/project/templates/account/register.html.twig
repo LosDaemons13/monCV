@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription | Éco-Service{% endblock %}
+
+{% block content %}
+    <div class="inner-banner has-base-color-overlay text-center" style="background: url({{ asset('theme/images/background/14.jpg') }});">
+        <div class="container">
+            <div class="box">
+                <h1>Inscription</h1>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-wrapper">
+        <div class="container">
+            <div class="pull-left">
+                <ul class="list-inline link-list">
+                    <li>
+                        <a href="{{ path('hub') }}">Accueil</a>
+                    </li>
+                    <li>
+                        Inscription
+                    </li>
+                </ul>
+            </div>
+            <div class="pull-right">
+                <a href="{{ path('app_login') }}" class="get-qoute"><i class="fa fa-arrow-circle-right"></i>Déjà inscrit ? Je me connecte</a>
+            </div>
+        </div>
+    </div>
+    <section class="register-section" style="margin-top: 50px;">
+        <div class="container">
+            <div class="row">
+                <div class="form-column column col-12">
+                    <div class="styled-form register-form">
+                        {{ form_start(form, {'method': 'POST'}) }}
+                        {{ form_row(form.firstname) }}
+                        {{ form_row(form.lastname) }}
+                        {{ form_row(form.birthdate) }}
+                        {{ form_row(form.email) }}
+                        {{ form_row(form.password, {'required': true}) }}
+                        {{ form_row(form.phone) }}
+                        {{ form_row(form.company_name) }}
+                        {{ form_row(form.company_siret) }}
+                        {{ form_row(form._token) }}
+                        {{ form_row(form.submit, {'attr': {'class': 'thm-btn thm-tran-bg'}}) }}
+                        {{ form_end(form, {'render_rest': false}) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

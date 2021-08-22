@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte | Éco-Service{% endblock %}
+
+{% block content %}
+    <div class="inner-banner has-base-color-overlay text-center" style="background: url({{ asset('theme/images/background/14.jpg') }});">
+        <div class="container">
+            <div class="box">
+                <h1>Modifier mes informations</h1>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-wrapper">
+        <div class="container">
+            <div class="pull-left">
+                <ul class="list-inline link-list">
+                    <li>
+                        <a href="{{ path('hub') }}">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('app_account') }}">Mon compte</a>
+                    </li>
+                    <li>
+                        Modifier mes informations
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <section class="register-section" style="margin-top: 50px;">
+        <div class="container">
+            <a href="{{ path('app_account')}}"><i class="fas fa-arrow-circle-left fa-3x" style="color: #8dc63f;" onmouseover="this.style.color='#373835';" onmouseout="this.style.color='#8dc63f';"></i></a>
+            <div class="row" style="margin-top:50px;">
+                <div class="form-column column col-12">
+                    <div class="styled-form register-form">
+                        {{ form_start(form, {'method': 'POST'}) }}
+                        {{ form_row(form.firstname) }}
+                        {{ form_row(form.lastname) }}
+                        {{ form_row(form.birthdate) }}
+                        {{ form_row(form.email) }}
+                        {{ form_row(form.phone) }}
+                        {{ form_row(form.company_name, {'empty_data': 'app.user.customers[0].companyName' }) }}
+                        {{ form_row(form.company_siret, {'empty_data': 'app.user.customers[0].companySiret' }) }}
+                        {{ form_row(form._token) }}
+                        {{ form_row(form.submit, {'attr': {'class': 'thm-btn thm-tran-bg'}}) }}
+                        {{ form_end(form, {'render_rest': false}) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block javascripts %}
+    <script>
+        $(document).ready(function() {
+            $("#user_company_name").attr('value', '{{ app.user.customers[0].companyName }}')
+            $("#user_company_siret").attr('value', '{{ app.user.customers[0].companySiret }}')
+        });
+    </script>
+{% endblock %}

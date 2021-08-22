@@ -1,0 +1,254 @@
+{# templates/base.html.twig #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Éco-Service{% endblock %}</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="{{ asset('theme/css/style.css') }}" />
+            <link rel="stylesheet" type="text/css" href="{{ asset('theme/css/responsive.css') }}" />
+            <link rel="stylesheet" type="text/css" href="{{ asset('libraries/fontawesome-5.15.2/css/all.css') }}" />
+        {% endblock %}
+
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('theme/images/fav-icon/apple-touch-icon.png') }}" />
+        <link rel="icon" type="image/png" href="{{ asset('theme/images/fav-icon/favicon_ecoservice.png') }}" sizes="32x32" />
+        <link rel="icon" type="image/png" href="{{ asset('theme/images/fav-icon/favicon_ecoservice.png') }}" sizes="16x16" />
+    </head>
+    <body>
+        {% block body %}
+            <div id="content">
+                <div class="top-bar">
+                    <div class="container">
+                        <div class="clearfix">
+                            <ul class="float_left top-bar-info">
+                                <li><i class="icon-phone-call"></i>Téléphone: 0601020304</li>
+                                <li><i class="icon-e-mail-envelope"></i>contact@eco-service.pac.center</li>
+                            </ul>
+                            <div class="right-column float_right">
+                                {#
+                                <ul class="social list_inline">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-feed"></i></a></li>
+                                </ul>
+                                #}
+                                {% if not app.user %}
+                                    <a href="{{ path('app_login') }}" class="thm-btn donate-box-btn">Connexion / Inscription</a>
+                                {% else %}
+                                    <a href="{{ path('app_account') }}" class="thm-btn donate-box-btn">Mon compte</a>
+                                    <a href="{{ path('app_logout') }}" class="thm-btn donate-box-btn">Déconnexion</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="theme_menu stricky">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="main-logo">
+                                    <a href="{{ path('hub') }}"><img src="{{ asset('theme/images/logo/logo_ecoservice2.png') }}" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-md-9 menu-column">
+                                <nav class="menuzord" id="main_menu">
+                                    <ul class="menuzord-menu">
+                                        <li><a href="{{ path('hub') }}">Accueil</a></li>
+                                        <li>
+                                            <a href="{{ path('individual_products', {category_id:'all'}) }}">Produits</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{{ path('individual_products', {category_id: 'all'}) }}">Nos produits</a></li>
+                                                <li><a href="{{ path('individual_cart') }}">Mon panier</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('professional_home') }}">Services</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{{ path('professional_home') }}">Nos services</a></li>
+                                                <li><a href="{{ path('professional_request') }}">Demande de devis</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="{{ path('app_contact') }}">Contact</a></li>
+                                        <li><a href="{{ path('individual_cart') }}" class="cart-btn"><i class="fa fa-shopping-cart"></i></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="right-column">
+                                <div class="right-area">
+                                    <div class="nav_side_content">
+                                        <div class="search_option">
+                                            <button class="search tran3s dropdown-toggle color1_bg" id="searchDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                            <form action="#" class="dropdown-menu" aria-labelledby="searchDropdown">
+                                                <input type="text" placeholder="Search...">
+                                                <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {# read and display all flash messages #}
+                {% for label, messages in app.flashes %}
+                    {% for message in messages %}
+                        <div class="flash-{{ label }}" style="background-color:green;height:40px;position:relative;">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+                {% block content %}{% endblock %}
+                <section class="call-out">
+                    <div class="container">
+                        {% if not app.user %}
+                            <div class="float_left">
+                                <h4>Vous êtes un particulier ? Une entreprise ? Une association ? Inscrivez-vous !</h4>
+                            </div>
+                            <div class="float_right">
+                                <a href="{{ path('app_register') }}" class="thm-btn style-3">Inscription</a>
+                            </div>
+                        {% else %}
+                            <div class="float_left">
+                                <h4>Vous êtes une entreprise et souhaitez un service sur-mesure ? Demandez un devis !</h4>
+                            </div>
+                            <div class="float_right">
+                                <a href="{{ path('professional_request') }}" class="thm-btn style-3">J'y vais !</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </section>
+                <footer class="main-footer">
+                    <div class="widgets-section">
+                        <div class="container">
+                            <div class="row">
+                                <div class="big-column col-md-6 col-sm-12 col-xs-12">
+                                    <div class="row clearfix">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="footer-widget about-column">
+                                                <figure class="footer-logo"><a href="{{ path('hub') }}"><img src="{{ asset('theme/images/logo/logo_ecoservice2.png') }}" alt=""></a></figure>
+                                                <ul class="contact-info">
+                                                    <li><span class="icon-signs"></span>21 Rue Marc Donadille, 13013 Marseille, France</li>
+                                                    <li><span class="icon-phone-call"></span> Téléphone: 0601020304</li>
+                                                    <li><span class="icon-note"></span>contact@eco-service.pac.center</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="footer-widget link-column">
+                                                <div class="section-title">
+                                                    <h4>Liens rapides</h4>
+                                                </div>
+                                                <div class="widget-content">
+                                                    <ul class="list">
+                                                        <li><a href="{{ path('individual_products', {category_id:'all'}) }}">Nos produits</a></li>
+                                                        <li><a href="{{ path('professional_home') }}">Nos services</a></li>
+                                                        <li><a href="{{ path('app_contact') }}">Contact</a></li>
+                                                        <li><a href="#">Mentions Légales</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="big-column col-md-6 col-sm-12 col-xs-12">
+                                    <div class="row clearfix">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="footer-widget post-column">
+                                                <div class="section-title">
+                                                    <h4>Prochains événements</h4>
+                                                </div>
+                                                <div class="post-list">
+                                                    <div class="post">
+                                                        <div class="post-thumb"><a href="#"><img src="{{ asset('theme/images/blog/thumb8.jpg') }}" alt=""></a></div>
+                                                        <a href="#"><h5>Conférence 2021: <br>Investissez chez nous !</h5></a>
+                                                        <div class="post-info"><i class="fa fa-calendar"></i>  15 Avril 2021</div>
+                                                    </div>
+                                                    <div class="post">
+                                                        <div class="post-thumb"><a href="#"><img src="{{ asset('theme/images/blog/thumb9.jpg') }}" alt=""></a></div>
+                                                        <a href="#"><h5>Présentation de nos <br>nouveaux produits...</h5></a>
+                                                        <div class="post-info"><i class="fa fa-calendar"></i> 21 Mai 2021</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="footer-widget contact-column">
+                                                <div class="section-title">
+                                                    <h4>Inscrivez-vous</h4>
+                                                </div>
+                                                <h5>Inscrivez-vous à notre newsletter !</h5>
+                                                <form action="#">
+                                                    <input type="email" placeholder="Adresse email....">
+                                                    <button type="submit"><i class="fa fa-paper-plane"></i></button>
+                                                </form>
+                                                <p>Nous n'allons pas vous spammer et votre adresse mail restera confidentiel.</p>
+                                                <ul class="social-icon">
+                                                    {#<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-feed"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-skype"></i></a></li>#}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <section class="footer-bottom">
+                    <div class="container">
+                        <div class="pull-left copy-text">
+                            <p><a href="#">Copyrights © 2021</a> Tous droits réservés. Développé par <a href="{{ path('hub') }}">Eco-Service.</a></p>
+                        </div>
+                        <div class="pull-right get-text">
+                            <a href="{{ path('app_register') }}">Inscrivez-vous dès maintenant !</a>
+                        </div>
+                    </div>
+                </section>
+                <button class="scroll-top tran3s color2_bg"><span class="fa fa-angle-up"></span></button>
+                <div class="preloader"></div>
+            </div>
+
+            <script src="{{ asset('theme/js/jquery.js') }}"></script>
+            <script src="{{ asset('theme/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('theme/js/menu.js') }}"></script>
+            <script src="{{ asset('theme/js/owl.carousel.min.js') }}"></script>
+            <script src="{{ asset('theme/js/jquery.mixitup.min.js') }}"></script>
+            <script src="{{ asset('theme/js/jquery.fancybox.pack.js') }}"></script>
+            <script src="{{ asset('theme/js/imagezoom.js') }}"></script>
+            <script src="{{ asset('theme/js/jquery.magnific-popup.min.js') }}"></script>
+            <script src="{{ asset('theme/js/jquery.polyglot.language.switcher.js') }}"></script>
+            {#<script src="{{ asset('theme/js/SmoothScroll.js') }}"></script>#}
+            <script src="{{ asset('theme/js/jquery.appear.js') }}"></script>
+            <script src="{{ asset('theme/js/jquery.countTo.js') }}"></script>
+            <script src="{{ asset('theme/js/validation.js') }}"></script>
+            <script src="{{ asset('theme/js/wow.js') }}"></script>
+            <script src="{{ asset('theme/js/jquery.fitvids.js') }}"></script>
+            <script src="{{ asset('theme/js/nouislider.js') }}"></script>
+            <script src="{{ asset('theme/js/isotope.js') }}"></script>
+            <script src="{{ asset('theme/js/pie-chart.js') }}"></script>
+            <script src="{{ asset('theme/js/rev-slider/jquery.themepunch.tools.min.js') }}"></script>
+            <script src="{{ asset('theme/js/rev-slider/jquery.themepunch.revolution.min.js') }}"></script>
+            <script src="{{ asset('theme/js/rev-slider/revolution.extension.actions.min.js') }}"></script>
+            <script src="{{ asset('theme/js/rev-slider/revolution.extension.carousel.min.js') }}"></script>
+            <script src="{{ asset('theme/js/rev-slider/revolution.extension.kenburn.min.js') }}"></script>
+            <script src="{{ asset('theme/js/rev-slider/revolution.extension.layeranimation.min.js') }}"></script>
+            <script src="{{ asset('theme/js/rev-slider/revolution.extension.migration.min.js') }}"></script>
+            <script src="{{ asset('theme/js/rev-slider/revolution.extension.navigation.min.js') }}"></script>
+            <script src="{{ asset('theme/js/rev-slider/revolution.extension.parallax.min.js') }}"></script>
+            <script src="{{ asset('theme/js/rev-slider/revolution.extension.slideanims.min.js') }}"></script>
+            <script src="{{ asset('theme/js/rev-slider/revolution.extension.video.min.js') }}"></script>
+            <script src="{{ asset('theme/js/custom.js') }}"></script>
+            {% block javascripts %}{% endblock %}
+        {% endblock %}
+    </body>
+</html>

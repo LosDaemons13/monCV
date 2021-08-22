@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos services | Éco-Service{% endblock %}
+
+{% block content %}
+    <div class="inner-banner has-base-color-overlay text-center" style="background: url({{ asset('theme/images/background/14.jpg') }});">
+        <div class="container">
+            <div class="box">
+                <h1>Nos services</h1>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-wrapper">
+        <div class="container">
+            <div class="pull-left">
+                <ul class="list-inline link-list">
+                    <li>
+                        <a href="{{ path('hub') }}">Accueil</a>
+                    </li>
+                    <li>
+                        Nos services
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <section class="default-section sec-padd">
+        <div class="container">
+            <div class="col-12">
+                <div class="service">
+                    <div>
+                        {% for service in services %}
+                        <div class="col-md-4 col-sm-6 col-x-12" onclick="window.location.replace('{{ path('professional_service', {id: service.id}) }}');" style="cursor: pointer;">
+                            <div class="service-item center">
+                                <div>
+                                    {% for servicePicture in service.servicePictures %}
+                                        <img height="270" src="/assets/uploads/{{ servicePicture.picture.id }}.{{ servicePicture.picture.extension }}" alt="Photo {{ service.label }}"></a>
+                                    {% endfor %}
+                                </div>
+                                <h4 style="margin: 20px 0;">{{ service.label }}</h4>
+                                <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ service.description }}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

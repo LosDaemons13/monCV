@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte | Éco-Service{% endblock %}
+
+{% block content %}
+    <div class="inner-banner has-base-color-overlay text-center" style="background: url({{ asset('theme/images/background/14.jpg') }});">
+        <div class="container">
+            <div class="box">
+                <h1>Mon compte</h1>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-wrapper">
+        <div class="container">
+            <div class="pull-left">
+                <ul class="list-inline link-list">
+                    <li>
+                        <a href="{{ path('hub') }}">Accueil</a>
+                    </li>
+                    <li>
+                        Mon compte
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 50px">
+        <table style="width:30%; margin: 0 auto; font-size: 18px;">
+            <tr style="border-bottom: 1px dashed #eee;">
+                <th>Prénom</th>
+                <td>{{ app.user.firstName }}</td>
+            </tr>
+            <tr style="border-bottom: 1px dashed #eee;">
+                <th>Nom</th>
+                <td>{{ app.user.lastName }}</td>
+            </tr>
+            <tr style="border-bottom: 1px dashed #eee;">
+                <th>Date de naissance</th>
+                <td>{{ app.user.birthdate|date('d/m/Y') }}</td>
+            </tr>
+            <tr style="border-bottom: 1px dashed #eee;">
+                <th>Email</th>
+                <td>{{ app.user.email }}</td>
+            </tr>
+            <tr style="border-bottom: 1px dashed #eee;">
+                <th>Numéro de téléphone</th>
+                <td>{{ app.user.phone }}</td>
+            </tr>
+        </table>
+        <div style="margin-top: 50px;margin-left: 50px;margin-bottom: 50px; font-size: 18px;">
+            <a href="{{ path('app_account_edit_customer', {id: app.user.id}) }}" class="text-link">Éditer mes informations</a><br>
+            <a href="{{ path('app_account_address') }}" class="text-link">Gérer mes adresses</a><br>
+            <a href="{{ path('app_account_purchase') }}" class="text-link">Consulter mes commandes</a>
+        </div>
+    </div>
+{% endblock %}

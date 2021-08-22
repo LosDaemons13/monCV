@@ -1,0 +1,113 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Produit | BackOffice{% endblock %}
+
+{% block content %}
+
+    <div class="row my-4 align-items-center">
+        <div class="col-6">
+            {% if product.id is null and form is defined %}
+                <h2><i class="fas fa-plus mr-2"></i>Ajouter un produit</h2>
+            {% endif %}
+            {% if product.id is not null and form is not defined %}
+                <h2><i class="fas fa-eye mr-2"></i>Détails d'un produit</h2>
+            {% endif %}
+            {% if product.id is not null and form is defined %}
+                <h2><i class="fas fa-pen mr-2"></i>Modifier un produit</h2>
+            {% endif %}
+        </div>
+        <div class="col-6">
+            <a type="button" class="btn btn-primary float-right" href="{{ path('admin_product_index') }}"><i class="fas fa-backspace mr-2"></i>Retour à la liste des produits</a>
+        </div>
+    </div>
+    {# Add product #}
+    {% if product.id is null and form is defined %}
+
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn btn-primary">{{ button_label|default('Valider') }}</button>
+        {{ form_end(form) }}
+    {% endif %}
+
+    {# Show product #}
+    {% if product.id is not null and form is not defined %}
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Label</th>
+                    <td>{{ product.label }}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{ product.description }}</td>
+                </tr>
+                <tr>
+                    <th>Prix</th>
+                    <td>{{ product.price }}</td>
+                </tr>
+                <tr>
+                    <th>Stock</th>
+                    <td>{{ product.stock }}</td>
+                </tr>
+                <tr>
+                    <th>Créé le</th>
+                    <td>{{ product.createdAt ? product.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Modifié le</th>
+                    <td>{{ product.updatedAt ? product.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Supprimé le</th>
+                    <td>{{ product.deletedAt ? product.deletedAt|date('Y-m-d H:i:s') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Catégories</th>
+                    <td>
+                        {% for category in product.productCategories %}
+                            {{ category.label }}
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>Images</th>
+                    <td>
+                        {% for productPicture in product.productPictures %}
+                            <img src="/assets/uploads/{{ productPicture.picture.id }}.{{ productPicture.picture.extension }}" alt="" width="150">
+                        {% endfor %}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a type="button" class="btn btn-warning mb-2" href="{{ path('admin_product_edit', {'id': product.id}) }}"><i class="fas fa-lock mr-2"></i>Modifier</a>
+
+        <form method="post" action="{{ path('admin_product_delete', {'id': product.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ product.id) }}">
+            <button class="btn btn-danger" ><i class="fas fa-trash mr-2"></i>Supprimer le produit</button>
+        </form>
+
+
+    {% endif %}
+
+
+    {# Edit product #}
+        {% if product.id is not null and form is defined %}
+
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn btn-primary">{{ button_label|default('Valider') }}</button>
+        {{ form_end(form) }}
+
+        <form method="post" action="{{ path('admin_product_delete', {'id': product.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ product.id) }}">
+            <button class="btn btn-danger" ><i class="fas fa-trash mr-2"></i>Supprimer le produit</button>
+        </form>
+
+        
+    {% endif %}
+
+{% endblock %}

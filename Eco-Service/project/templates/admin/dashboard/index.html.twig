@@ -1,0 +1,55 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Tableau de bord | BackOffice{% endblock %}
+
+{% block content %}
+
+    <div class="row my-4 align-items-center">
+        <div class="col-6">
+            <h2><i class="fas fa-home mr-2"></i>Tableau de bord</h2>
+        </div>
+        <div class="col-6">
+            <a type="button" class="btn btn-primary float-right" href="{{ path('hub') }}"></i>Retour au site</a>
+        </div>
+    </div>
+    <div class="row">
+        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPERADMIN") %}
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Gestion des utilisateurs</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="{{ path('admin_user_index') }}" class="list-group-item list-group-item-action"><i class="fas fa-external-link-alt mr-2"></i>Gestion des utilisateurs</a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Section produits</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPERADMIN") %}
+                    <a href="{{ path('admin_product_index') }}" class="list-group-item list-group-item-action"><i class="fas fa-external-link-alt mr-2"></i>Gestion des produits</a>
+                    <a href="{{ path('admin_category_index') }}" class="list-group-item list-group-item-action"><i class="fas fa-external-link-alt mr-2"></i>Gestion des catégories de produit</a>
+                    {% endif %}
+                    <a href="{{ path('admin_purchase_index') }}" class="list-group-item list-group-item-action"><i class="fas fa-external-link-alt mr-2"></i>Gestion des commandes</a>
+                </div>
+            </div>
+        </div><div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Section services</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPERADMIN") %}
+                    <a href="{{ path('admin_service_index') }}" class="list-group-item list-group-item-action"><i class="fas fa-external-link-alt mr-2"></i>Gestion des services</a>
+                    {% endif %}
+                    <a href="{{ path('admin_request_index') }}" class="list-group-item list-group-item-action"><i class="fas fa-external-link-alt mr-2"></i>Gestion des demandes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
