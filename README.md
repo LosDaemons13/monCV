@@ -2,4 +2,4 @@
 
 Ce GitHub permet de visualiser les différents projets auxquels j'ai pu participer.
 
-Mon portfolio est disponible à cette adresse afin d'apprendre un peu plus à me connaître : https://portfolio-loris.alwaysdata.net/
+Mon portfolio est disponible à cette adresse afin d'apprendre un peu plus à me connaître : https://lorisesteve.alwaysdata.net/
