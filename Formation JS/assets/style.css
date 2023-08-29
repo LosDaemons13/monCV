@@ -1,0 +1,265 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    background-color: #000;
+}
+@font-face {
+    font-family: 'Bourgeois';
+    src: local('Bourgeois UltraBold'), local('Bourgeois-UltraBold'), url('Bourgeois-UltraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+:root {
+    font-size: 62.5%;
+    --font: 'Bourgeois';
+    --light-black: rgb(0 0 0 /.8);
+}
+/*LIST*/
+.list {
+    width: 95%;
+    margin: 0 auto 3rem;
+    list-style: none;
+    font-family: var(--font);
+}
+
+.list .ad:hover {
+        background-color: #333333;
+        cursor: pointer;
+}
+
+.item + .item {
+    margin-top: 0.625em;
+}
+.name {
+    font-size: 1.8rem;
+}
+.value {
+    font-family: var(--font);
+    font-size: 2rem;
+    text-align: center;
+    line-height: 1.25;
+    align-self: center;
+}
+.table {
+    display: none;
+    color: #fff;
+    font-family: var(--font);
+    font-size: 24px;
+    width: 98%;
+    margin: auto;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+}
+.table tr:hover td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.table tr:hover td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.legend-icon {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+.legend-position {
+    border-radius: 4px;
+    display: inline-flex;
+    height: 26px;
+    justify-content: center;
+    width: 28px;
+    line-height: 1;
+}
+.header {
+    font-family: var(--font), sans-serif;
+    font-weight: 500;
+    line-height: 1.75;
+    padding: 10px;
+    background-color: #1c1c1d;
+    cursor: auto;
+}
+.header:nth-child(2), .cell:nth-child(2) {
+    text-align: left;
+}
+.cell {
+    font-family: var(--font), sans-serif;
+    text-align: center;
+    padding: 10px;
+}
+.table, .list {
+    text-transform: uppercase;
+}
+.table tr:hover {
+    background-color: #333333;
+    cursor: pointer;
+}
+.team img {
+    padding-right: 5px;
+}
+.team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper {
+    background-color: #1c1c1d;
+    width: 95%;
+    margin: 3rem auto;
+    border-radius: 10px;
+}
+.ad {
+    background-color: #1c1c1d;
+    color: #fff;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+.row {
+    display: flex;
+    justify-content:space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 0.625em;
+}
+.row:last-child {
+    border-bottom: 0;
+}
+.select {
+    text-align: center;
+    padding: 10px 
+}
+.legends {
+    display: grid;
+    min-height: 60px;
+    padding: 20px 0px 20px 20px;
+    row-gap: 10px;
+    flex-flow: row wrap;
+    -webkit-box-align: center;
+    align-items: center;
+    font-family: var(--font);
+    text-transform: uppercase;
+}
+.legends > li {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-right: 20px;
+    font-size: 14px;
+    letter-spacing: 0.18px;
+    color: #fff;
+}
+select {
+    background: #1c1c1d;
+    color: #fff;
+    padding: 10px;
+    width: auto;
+    margin: 20px auto;
+    border: none;
+    border-radius: 10px;
+    font-family: var(--font);
+    font-size: 20px;
+    background-image: url("arrow.svg");
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    background-size: 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-transform: uppercase;
+}
+select:focus-visible {
+    outline: none;
+}
+.buttons {
+    justify-content: center;
+    display: flex;
+    gap: 16px;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+.buttons button {
+    background-color: #1c1c1d;
+    padding: 10px;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: var(--font);
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.buttons button:hover {
+    background-color: #333333;
+}
+.buttons button.selected {
+    background-color: #3a3a3b;
+}
+@media (max-width: 1000px) {
+    .tabs .tab-list li label {
+        white-space: initial;
+   }
+    .tabs .tab-list li label br {
+        display: initial;
+   }
+    .tabs .tab-list li label svg {
+        height: 1.5em;
+   }
+}
+@media (max-width: 600px) {
+    .tabs .tab-list li label {
+        padding: 5px;
+        border-radius: 5px;
+   }
+    .tabs .tab-list li label span {
+        display: none;
+   }
+    .tabs .slider {
+        display: none;
+   }
+    .tabs .content {
+        margin-top: 20px;
+   }
+    .tabs .content section h2 {
+        display: block;
+   }
+}
+@media (min-width: 1200px) {
+    .list {
+        display: none;
+   }
+    .table {
+        display: table;
+   }
+    .team {
+        justify-content: start;
+   }
+    .team img {
+        padding-right: 20px;
+   }
+    .legends {
+        display: flex;
+   }
+    .legend-position {
+        height: 30px;
+        width: 30px;
+   }
+    .wrapper {
+        margin: 1rem auto 3rem;
+   }
+    .legends > li {
+        font-size: 18px;
+   }
+    .buttons {
+        padding-bottom: 20px;
+   }
+    .buttons button {
+        font-size: 18px;
+   }
+}
