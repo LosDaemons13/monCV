@@ -4,29 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-    <!--==================== UNICONS ====================-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
-
-    <!--==================== SWIPER CSS ====================-->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-
-    <!--==================== CSS ====================-->
     <link rel="stylesheet" href="assets/css/styles.css">
-
-    <!--==================== FAVICON ====================-->
     <link rel="icon" type="image/png" href="assets/img/logo.png">
-
     <title>Portfolio Loris Esteve</title>
 </head>
 
 <body>
-    <!--==================== HEADER ====================-->
+
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="#home" class="nav__logo"><img class="nav__logo" width="40" src="assets/img/logo.png"></a>
+            <a href="#" class="nav__logo"><img class="nav__logo" width="40" src="assets/img/logo.png"></a>
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list grid">
@@ -55,11 +44,7 @@
                             <i class="uil uil-scenery nav__icon"></i> Portfolio
                         </a>
                     </li>
-                    <!-- <li class="nav__item">
-                        <a href="#testimonials" class="nav__link">
-                            <i class="uil uil-scenery nav__icon"></i> Commentaires
-                        </a>
-                    </li> -->
+                    </li>
                     <li class="nav__item">
                         <a href="#contact" class="nav__link">
                             <i class="uil uil-message nav__icon"></i> Contact
@@ -70,7 +55,6 @@
             </div>
 
             <div class="nav__btns">
-                <!-- Theme change button -->
                 <i class="uil uil-moon change-theme" id="theme-button"></i>
 
                 <div class="nav__toggle" id="nav-toggle">
@@ -80,37 +64,7 @@
         </nav>
     </header>
 
-    <!--==================== MAIN ====================-->
     <main class="main">
-        <!--==================== HOME ====================-->
-        <!-- <section class="home section" id="home">
-            <div class="home__container container grid">
-                <div class="home__data">
-                    <div class="home__social">
-                        <a href="https://www.linkedin.com/in/profil-loris-esteve/" target="_blank" class="home__social-icon">
-                            <i class="uil uil-linkedin-alt"></i>
-                        </a>
-
-                        <a href="https://github.com/" target="_blank" class="home__social-icon">
-                            <i class="uil uil-github-alt"></i>
-                        </a>
-                    </div>
-                    <h1 class="section__title home__title">Présentation</h1>
-                    <span class="section__subtitle"></span>
-                    <h3 class="home__subtitle">Développeur front-end</h3>
-                    <p class="home__description">Goût du challenge, j'aime me lancer des défis et sortir de ma zone de confort.
-                        Esprit d'équipe, aisance relationnelle et bonnes capacités d'adaptation : Le partage et la communication sont très importants pour moi, pour le travail de groupe en projet et pour l'échange de connaissances et de compétences.</p>
-                    <div class="about__buttons">
-                        <a href="#contact" class="button button--flex contact__button">
-                            Contactez-moi <i class="uil uil-message button__icon"></i>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </section> -->
-
-        <!--==================== ABOUT ====================-->
         <section class="about section" id="about">
             <h2 class="section__title">À propos de moi</h2>
             <span class="section__subtitle">Développeur Web - Webdesigner</span>
@@ -136,8 +90,8 @@
                 </div>
 
                 <div class="about__buttons">
-                    <a download="" href="assets/pdf/ESTEVE Loris CV.pdf" class="button button--flex cv__button">
-                        Télécharger mon CV<i class="uil uil-download-alt button__icon"></i>
+                    <a href="assets/pdf/ESTEVE Loris CV.pdf" target="_blank" class="button button--flex cv__button">
+                        Voir mon CV<i class="uil uil-download-alt button__icon"></i>
                     </a>
                     <a href="#contact" class="button button--flex contact__first__button">
                         Contactez-moi <i class="uil uil-message button__icon"></i>
@@ -146,14 +100,12 @@
             </div>
         </section>
 
-        <!--==================== SKILLS ====================-->
         <section class="skills section" id="skills">
             <h2 class="section__title">Compétences techniques</h2>
             <span class="section__subtitle">Hard skills</span>
 
-            <div class="skills_container container">
+            <div class="skills__container container">
                 <div>
-                    <!--==================== SKILLS 1 ====================-->
                     <div class="skills__content skills__open">
                         <div class="skills__header">
                             <i class="uil uil-brackets-curly skills__icon"></i>
@@ -166,50 +118,100 @@
                         </div>
 
                         <div class="skills__list grid">
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">HTML</h3>
-                                    <span class="skills__number">90%</span>
+
+                            <div class="skills__container__list">
+                                <div class="skills__img">
+                                    <img src="assets/img/html.svg" />
                                 </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__html"></span>
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">HTML</h3>
+                                        <span class="skills__number">90%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__html"></span>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">CSS</h3>
-                                    <span class="skills__number">80%</span>
+                            <div class="skills__container__list">
+                                <div class="skills__img">
+                                    <img src="assets/img/css.svg" />
                                 </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__css"></span>
-                                </div>
-                            </div>
-
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">JavaScript</h3>
-                                    <span class="skills__number">60%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__js"></span>
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">CSS</h3>
+                                        <span class="skills__number">80%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__css"></span>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">React</h3>
-                                    <span class="skills__number">80%</span>
+                            <div class="skills__container__list">
+                                <div class="skills__img">
+                                    <img src="assets/img/js.svg" />
                                 </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__react"></span>
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">JavaScript</h3>
+                                        <span class="skills__number">60%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__js"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skills__container__list">
+                                <div class="skills__img">
+                                    <img src="assets/img/reactjs.svg" />
+                                </div>
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">ReactJS</h3>
+                                        <span class="skills__number">80%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__reactjs"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skills__container__list">
+                                <div class="skills__img">
+                                    <img src="assets/img/vuejs.svg" />
+                                </div>
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">VueJS</h3>
+                                        <span class="skills__number">70%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__vuejs"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skills__container__list">
+                                <div class="skills__img">
+                                    <img src="assets/img/flutter.svg" />
+                                </div>
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">Flutter</h3>
+                                        <span class="skills__number">60%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__vuejs"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!--==================== SKILLS 2 ====================-->
                 <div class="skills__content skills__close">
                     <div class="skills__header">
                         <i class="uil uil-server-network skills__icon"></i>
@@ -222,33 +224,42 @@
                     </div>
 
                     <div class="skills__list grid">
-                        <div class="skills__data">
-                            <div class="skills__titles">
-                                <h3 class="skills__name">PHP</h3>
-                                <span class="skills__number">60%</span>
+                        <div class="skills__container__list">
+                            <div class="skills__img">
+                                <img src="assets/img/php.svg" />
                             </div>
-                            <div class="skills__bar">
-                                <span class="skills__percentage skills__php"></span>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">PHP</h3>
+                                    <span class="skills__number">60%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__php"></span>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="skills__data">
-                            <div class="skills__titles">
-                                <h3 class="skills__name">Python</h3>
-                                <span class="skills__number">20%</span>
+                        <div class="skills__container__list">
+                            <div class="skills__img">
+                                <img src="assets/img/python.svg" />
                             </div>
-                            <div class="skills__bar">
-                                <span class="skills__percentage skills__python"></span>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Python</h3>
+                                    <span class="skills__number">20%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__python"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div>
-                    <!--==================== SKILLS 3 ====================-->
                     <div class="skills__content skills__close">
                         <div class="skills__header">
-                            <i class="uil uil-swatchbook skills__icon"></i>
+                            <i class="uil uil-palette skills__icon"></i>
 
                             <div>
                                 <h1 class="skills__titles">Design Graphique</h1>
@@ -258,33 +269,48 @@
                         </div>
 
                         <div class="skills__list grid">
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Photoshop</h3>
-                                    <span class="skills__number">80%</span>
+                            <div class="skills__container__list">
+                                <div class="skills__img">
+                                    <img src="assets/img/photoshop.svg" />
                                 </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__photoshop"></span>
-                                </div>
-                            </div>
-
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Illustrator</h3>
-                                    <span class="skills__number">80%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__illustrator"></span>
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">Photoshop</h3>
+                                        <span class="skills__number">80%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__photoshop"></span>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Adobe XD</h3>
-                                    <span class="skills__number">80%</span>
+                            <div class="skills__container__list">
+                                <div class="skills__img">
+                                    <img src="assets/img/illustrator.svg" />
                                 </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__xd"></span>
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">Illustrator</h3>
+                                        <span class="skills__number">80%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__illustrator"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skills__container__list">
+                                <div class="skills__img">
+                                    <img src="assets/img/xd.svg" />
+                                </div>
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">Adobe XD</h3>
+                                        <span class="skills__number">80%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__xd"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -298,7 +324,6 @@
 
             <div class="skills_container container">
                 <div>
-                    <!--==================== SKILLS 1 ====================-->
                     <div class="skills__content skills__close">
                         <div class="skills__header">
                             <i class="uil uil-user skills__icon"></i>
@@ -310,7 +335,7 @@
                             <i class="uil uil-angle-down skills__arrow"></i>
                         </div>
 
-                        <div class="skills__list grid">
+                        <div class="skills__list grid" id="myself">
                             <div class="skills__data">
                                 <div class="skills__titles">
                                     <h3 class="skills__name">Autonomie</h3>
@@ -370,10 +395,9 @@
                 </div>
         </section>
 
-        <!--==================== QUALIFICATION ====================-->
         <section class="qualification section" id="qualifications">
             <h2 class="section__title">Parcours personnel</h2>
-            <span class="section__subtitle">Scolaire/Professionnel</span>
+            <span class="section__subtitle">Parcours scolaire et professionnel</span>
 
             <div class="qualification__container container">
                 <div class="qualification__tabs">
@@ -389,11 +413,9 @@
                 </div>
 
                 <div class="qualification__sections">
-                    <!--==================== QUALIFICATION CONTENT 1 ====================-->
                     <div class="qualification__content qualification__active" data-content id="education">
-                        <!--==================== QUALIFICATION 1 ====================-->
                         <div class="qualification__data">
-                            <div>
+                            <div class="qualification__card">
                                 <h3 class="qualification__title">Titre RNCP 7 | Chef de projet systèmes d'information - Numérique & Management</h3>
                                 <span class="qualification__subtitle">
                                     <br />
@@ -417,7 +439,6 @@
                                 <span class="qualification__line"></span>
                             </div>
                         </div>
-                        <!--==================== QUALIFICATION 2 ====================-->
                         <div class="qualification__data">
                             <div></div>
 
@@ -426,7 +447,7 @@
                                 <span class="qualification__line"></span>
                             </div>
 
-                            <div>
+                            <div class="qualification__card">
                                 <h3 class="qualification__title">Brevet de Technicien Supérieur Systèmes Numériques option Informatique et Réseaux</h3>
                                 <span class="qualification__subtitle">
                                     <br />
@@ -444,9 +465,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!--==================== QUALIFICATION 3 ====================-->
                         <div class="qualification__data">
-                            <div>
+                            <div class="qualification__card">
                                 <h3 class="qualification__title">Baccalauréat Sciences et Technologies du Développement Durable option Energie Environnement – Mention Assez Bien</h3>
                                 <span class="qualification__subtitle">
                                     <br />
@@ -468,11 +488,9 @@
                             </div>
                         </div>
                     </div>
-                    <!--==================== QUALIFICATION CONTENT 2 ====================-->
                     <div class="qualification__content" data-content id="work">
-                        <!--==================== QUALIFICATION 1 ====================-->
                         <div class="qualification__data">
-                            <div>
+                            <div class="qualification__card">
                                 <h3 class="qualification__title">Alternance - Développeur Front-End </h3>
                                 <span class="qualification__subtitle">
                                     <br />
@@ -497,7 +515,6 @@
                                 <span class="qualification__line"></span>
                             </div>
                         </div>
-                        <!--==================== QUALIFICATION 2 ====================-->
                         <div class="qualification__data">
                             <div></div>
 
@@ -505,7 +522,7 @@
                                 <span class="qualification__rounder"></span>
                                 <span class="qualification__line"></span>
                             </div>
-                            <div>
+                            <div class="qualification__card">
                                 <h3 class="qualification__title">Stage en informatique</h3>
                                 <span class="qualification__subtitle">
                                     <br />
@@ -524,9 +541,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!--==================== QUALIFICATION 3 ====================-->
                         <div class="qualification__data">
-                            <div>
+                            <div class="qualification__card">
                                 <h3 class="qualification__title">Employé de rayon</h3>
                                 <span class="qualification__subtitle">
                                     <br />
@@ -548,14 +564,13 @@
                                 <span class="qualification__line"></span>
                             </div>
                         </div>
-                        <!--==================== QUALIFICATION 4 ====================-->
                         <div class="qualification__data">
                             <div></div>
 
                             <div>
                                 <span class="qualification__rounder"></span>
                             </div>
-                            <div>
+                            <div class="qualification__card">
                                 <h3 class="qualification__title">Stage d'observation</h3>
                                 <span class="qualification__subtitle">
                                     <br />
@@ -577,13 +592,11 @@
             </div>
         </section>
 
-        <!--==================== SERVICES ====================-->
         <section class="services section" id="services">
             <h2 class="section__title">Services</h2>
             <span class="section__subtitle">Ce que je propose</span>
 
             <div class="services__container container grid">
-                <!--==================== SERVICES 1 ====================-->
                 <div class="services__content">
                     <div>
                         <i class="uil uil-web-grid services__icon"></i>
@@ -617,7 +630,6 @@
                         </div>
                     </div>
                 </div>
-                <!--==================== SERVICES 2 ====================-->
                 <div class="services__content">
                     <div>
                         <i class="uil uil-arrow services__icon"></i>
@@ -650,14 +662,12 @@
             </div>
         </section>
 
-        <!--==================== PORTFOLIO ====================-->
         <section class="portfolio section" id="portfolio">
             <h2 class="section__title">Portfolio</h2>
             <span class="section__subtitle">Projets les plus récents</span>
 
             <div class="portfolio__container container swiper-container">
                 <div class="swiper-wrapper">
-                    <!--==================== PORTFOLIO 1 ====================-->
                     <div class="portfolio__content grid swiper-slide">
                         <img src="assets/img/portfolio1.png" alt="" class="portfolio__img">
 
@@ -670,12 +680,11 @@
                             </a>
                         </div>
                     </div>
-                    <!--==================== PORTFOLIO 2 ====================-->
                     <div class="portfolio__content grid swiper-slide">
                         <img src="assets/img/portfolio2.png" alt="" class="portfolio__img">
 
                         <div class="portfolio__data">
-                            <h3 class="portfolio__title">Site E-Commerce</h3>
+                            <h3 class="portfolio__title">Site Vitrine et E-Commerce</h3>
                             <p class="portfolio__description">Produits pour particulier et Services pour professionnels</p>
                             <a href="https://eco-service.pac.center" target="_blank" class="button button--flex button--small portfolio__button">
                                 Demo
@@ -683,7 +692,6 @@
                             </a>
                         </div>
                     </div>
-                    <!--==================== PORTFOLIO 3 ====================-->
                     <div class="portfolio__content grid swiper-slide">
                         <img src="assets/img/portfolio3.png" alt="" class="portfolio__img">
 
@@ -696,7 +704,6 @@
                             </a>
                         </div>
                     </div>
-                    <!--==================== PORTFOLIO 4 ====================-->
                     <div class="portfolio__content grid swiper-slide">
                         <img src="assets/img/portfolio4.png" alt="" class="portfolio__img">
 
@@ -709,7 +716,6 @@
                             </a>
                         </div>
                     </div>
-                    <!--==================== PORTFOLIO 5 ====================-->
                     <div class="portfolio__content grid swiper-slide">
                         <img src="assets/img/portfolio5.png" alt="" class="portfolio__img">
 
@@ -722,7 +728,6 @@
                             </a>
                         </div>
                     </div>
-                    <!--==================== PORTFOLIO 6 ====================-->
                     <div class="portfolio__content grid swiper-slide">
                         <img src="assets/img/portfolio6.png" alt="" class="portfolio__img">
 
@@ -735,7 +740,6 @@
                             </a>
                         </div>
                     </div>
-                    <!--==================== PORTFOLIO 7 ====================-->
                     <div class="portfolio__content grid swiper-slide">
                         <img src="assets/img/portfolio7.png" alt="" class="portfolio__img">
 
@@ -750,7 +754,6 @@
                     </div>
                 </div>
 
-                <!-- Add Arrows -->
                 <div class="swiper-button-next">
                     <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
                 </div>
@@ -758,87 +761,23 @@
                     <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
                 </div>
 
-                <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
             </div>
         </section>
 
-        <!--==================== PROJECT IN MIND ====================-->
         <section class="project section">
             <div class="project__bg">
                 <div class="project__container container grid">
                     <div class="project__date">
                         <h2 class="project__title">Vous avez un nouveau projet ?</h2>
                         <a href="#contact" class="button button--flex button--white contact__first__button">
-                            Contactez-moi
+                            Contactez-moi maintenant
                             <i class="uil uil-message project__icon button__icon"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!--==================== TESTIMONIAL ====================-->
-        <!-- <section class="testimonial section" id="testimonials">
-            <h2 class="section__title">Commentaires</h2>
-            <span class="section__subtitle">Commentaires de mes clients</span>
-
-            <div class="testimonial__container container swiper-container">
-                <div class="swiper-wrapper"> -->
-        <!--==================== TESTIMONIAL 1 ====================-->
-        <!-- <div class="testimonial__content swiper-slide">
-                        <div class="testimonial__data">
-                            <div class="testimonial__header">
-
-                                <div>
-                                    <h3 class="testimonial__name">Philippe Mora</h3>
-                                    <span class="testimonial__client">Coordinateur pédagogique</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <p class="testimonial__description">Trés bon projet, tout est cohérent,
-                            la relation avec le client a bien été respecté.
-                        </p>
-                    </div> -->
-        <!--==================== TESTIMONIAL 2 ====================-->
-        <!-- <div class="testimonial__content swiper-slide">
-                        <div class="testimonial__data">
-                            <div class="testimonial__header">
-
-                                <div>
-                                    <h3 class="testimonial__name">Philippe Mora</h3>
-                                    <span class="testimonial__client">Coordinateur pédagogique</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <p class="testimonial__description">Très bon projet, les livrables sont biens construits et utilisables (surtout les Specs) et bonne soutenance.
-                        </p>
-                    </div> -->
-        <!--==================== TESTIMONIAL 3 ====================-->
-        <!-- <div class="testimonial__content swiper-slide">
-                        <div class="testimonial__data">
-                            <div class="testimonial__header">
-
-                                <div>
-                                    <h3 class="testimonial__name">Aaron BERREBI</h3>
-                                    <span class="testimonial__client">Intervenant Design Graphique</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <p class="testimonial__description">Bon travail ! Complet, le prototypage est bien réalisé, l'ergonomie fonctionne. Quelques améliorations possibles sur la hiérarchisation des éléments et la taille des icônes & polices. Bonne présentation.
-                        </p>
-                    </div>
-                </div> -->
-
-        <!-- Add Pagination -->
-        <!-- <div class="swiper-pagination swiper-pagination-testimonial"></div> -->
-        <!-- </div>
-        </section> -->
-
-        <!--==================== CONTACT ME ====================-->
 
         <?php
         if (isset($_POST['mailform'])) {
@@ -872,9 +811,9 @@
 
             <div class="contact__container container grid">
                 <div>
-                    <div class="contact__information">
+                    <!-- <div class="contact__information">
                         <i class="uil uil__phone contact__icon"></i>
-                    </div>
+                    </div> -->
                     <div class="contact__information">
                         <i class="uil uil__envelope contact__icon"></i>
 
@@ -893,7 +832,7 @@
                     </div>
                 </div>
 
-                <form method="POST" action="#contact" class="contact__form grid">
+                <form method="POST" action="#contact" class="contact__form">
                     <div class="contact__message">
                         <?php if (isset($msg)) {
                             echo $msg;
@@ -903,29 +842,28 @@
                     <div class="contact__inputs grid">
                         <div class="contact__content">
                             <label for="nom" class="contact__label">Nom Prénom ou Nom entreprise</label>
-                            <input type="text" name="nom" id="nom" class="contact__input" placeholder="Entrez votre nom" value="<?php if (isset($_POST['nom'])) {
-                                                                                                                                    echo $_POST['nom'];
-                                                                                                                                } ?>" /><br /><br />
+                            <input type="text" name="nom" id="nom" class="contact__input" placeholder="Entrez votre nom prénom ou non d'entreprise" value="<?php if (isset($_POST['nom'])) {
+                                                                                                                                                                echo $_POST['nom'];
+                                                                                                                                                            } ?>" />
                         </div>
                         <div class="contact__content">
                             <label for="mail" class="contact__label">Email</label>
                             <input type="email" name="mail" id="mail" class="contact__input" placeholder="Entrez votre adresse mail" value="<?php if (isset($_POST['mail'])) {
                                                                                                                                                 echo $_POST['mail'];
-                                                                                                                                            } ?>" /><br /><br />
+                                                                                                                                            } ?>" />
                         </div>
                         <div class="contact__content">
                             <label for="subject" class="contact__label">Sujet</label>
                             <input type="text" name="subject" id="subject" class="contact__input" placeholder="Entrez le sujet de votre message" value="<?php if (isset($_POST['subject'])) {
                                                                                                                                                             echo $_POST['subject'];
-                                                                                                                                                        } ?>" /><br /><br />
+                                                                                                                                                        } ?>" />
                         </div>
                         <div class="contact__content">
                             <label for="message" class="contact__label">Message</label>
                             <textarea name="message" id="message" cols="0" rows="7" class="contact__input" placeholder="Entrez votre message"><?php if (isset($_POST['message'])) {
                                                                                                                                                     echo $_POST['message'];
-                                                                                                                                                } ?></textarea><br /><br />
+                                                                                                                                                } ?></textarea>
                         </div>
-                        <!-- <input type="submit" value="Envoyer" name="mailform" class="button button--flex contact__button" /> -->
                         <button type="submit" name="mailform" class="button button--flex contact__button">
                             Envoyer <i class="uil uil-message button__icon"></i>
                         </button>
@@ -937,12 +875,11 @@
         </section>
     </main>
 
-    <!--==================== FOOTER ====================-->
     <footer class="footer">
         <div class="footer__bg">
             <div class="footer__container container grid">
                 <div class="footer__left">
-                    <a href="#home" class="nav__logo"><img class="nav__logo" width="60" src="assets/img/logo-white.png"></a>
+                    <a href="#" class="nav__logo"><img class="nav__logo" width="60" src="assets/img/logo-white.png"></a>
                     <div class="footer__right">
                         <h1 class="footer__title">Loris Esteve</h1>
                         <span class="footer__subtitle">Développeur Web - Webdesigner</span>
@@ -962,15 +899,12 @@
         </div>
     </footer>
 
-    <!--==================== SCROLL TOP ====================-->
     <a href="#" class="scrollup" id="scroll-up">
         <i class="uil uil-arrow-up scrollup__icon"></i>
     </a>
 
-    <!--==================== SWIPER JS ====================-->
     <script src="assets/js/swiper-bundle.min.js"></script>
 
-    <!--==================== MAIN JS ====================-->
     <script src="assets/js/main.js"></script>
 </body>
 
