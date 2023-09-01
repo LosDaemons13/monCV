@@ -1,0 +1,157 @@
+body {
+    font-family: 'Outfit', sans-serif;
+}
+
+p.text-mention, p.text-politique {
+    text-align: justify;
+    font-size: 16px;
+}
+
+h3.titre-mention, h3.titre-politique {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#glob-mention, #glob-politique {
+    text-align: center;
+    width: 100%;
+}
+.mention, .politique {
+    width: 50%;
+    position: absolute;
+    left: 26%;
+    top: 50%;
+}
+
+img.logo-mention, img.logo-politique {
+    width: 420px !important;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+}
+
+.footer-mention {
+    background-color: #5AE999;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 424px){
+
+    header#header-politique {
+        width: 100%;
+    }
+    img.logo-mention, img.logo-politique {
+        left: 13%;
+        width: 280px !important;
+    }
+    .mention, .politique {
+        width: 90%;
+        position: absolute;
+        left: 4%;
+        top: 60%;
+    }
+    h3.titre-mention, h3.titre-politique {
+        font-size: 20px;
+    }
+    p.text-mention, p.text-politique {
+        font-size: 20px;
+    }
+}
+@media only screen and (min-width: 425px) and (max-width: 767px){
+
+    header#header-politique {
+        width: 100%;
+    }
+    img.logo-mention, img.logo-politique {
+        left: 12%;
+        width: 370px !important;
+    }
+    .mention, .politique {
+        width: 90%;
+        position: absolute;
+        left: 4%;
+        top: 60%;
+    }
+    h3.titre-mention, h3.titre-politique {
+        font-size: 20px;
+    }
+    p.text-mention, p.text-politique {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+
+    img.logo-mention, img.logo-politique {
+        top: 19%;
+        left: 25%;
+    }
+    .mention, .politique {
+        width: 90%;
+        top: 60%;
+        left: 6%;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1439px){
+
+    img.logo-mention, img.logo-politique {
+        left: 36%;
+    }
+    .mention, .politique {
+        width: 90%;
+        top: 60%;
+        left: 6%;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+
+    img.logo-mention, img.logo-politique {
+        left: 40%;
+    }
+}
+
+h1.map-title {
+    color: #0c2544;
+    font-size: 80px;
+    text-align: center;
+    margin-top: 40px;
+}
+.map-homepage, .map-mention, .map-politique, .map-sitemap {
+    width: 300px;
+    height: 150px;
+    text-align: center;
+    margin-top: 150px;
+    background-color: #5AE999;
+    color: #0c2544;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.map-homepage a, .map-mention a, .map-politique a, .map-sitemap a {
+    color: #0c2544;
+}
+
+.map-homepage a:hover, .map-mention a:hover, .map-politique a:hover, .map-sitemap a:hover {
+    color: #0c2544;
+}
+
+.doc {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px;
+}
+.hp {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+i.fa-3x.fa-solid.fa-house, i.fa-3x.fa-solid.fa-file-lines, i.fa-3x.fa-solid.fa-sitemap {
+    margin-top: 40px;
+    color: #0c2544;
+}
+
+.map-list {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36.147" height="32.222" viewBox="0 0 36.147 32.222">
+  <g id="Groupe_24" data-name="Groupe 24" transform="translate(2.422 2.598)">
+    <g id="Groupe_78" data-name="Groupe 78" transform="translate(-2.422 -2.598)">
+      <g id="Groupe_77" data-name="Groupe 77" transform="translate(0 0)">
+        <path id="Tracé_29" data-name="Tracé 29" d="M35.762,40.524,18.628,27.979a.939.939,0,0,0-1.11,0L.384,40.524a.939.939,0,0,0,1.11,1.516L18.073,29.9,34.652,42.04a.939.939,0,0,0,1.11-1.516Z" transform="translate(0.001 -27.798)"/>
+      </g>
+    </g>
+    <g id="Groupe_80" data-name="Groupe 80" transform="translate(1.563 11.857)">
+      <g id="Groupe_79" data-name="Groupe 79">
+        <path id="Tracé_30" data-name="Tracé 30" d="M83.689,232.543a.939.939,0,0,0-.939.939v14.949H75.236v-8.16a4.7,4.7,0,1,0-9.393,0v8.16H58.33V233.482a.939.939,0,0,0-1.878,0v15.889a.939.939,0,0,0,.939.939h9.392a.939.939,0,0,0,.936-.866.71.71,0,0,0,0-.073v-9.1a2.818,2.818,0,1,1,5.636,0v9.1a.692.692,0,0,0,0,.072.939.939,0,0,0,.936.867h9.392a.939.939,0,0,0,.939-.939V233.482A.939.939,0,0,0,83.689,232.543Z" transform="translate(-56.452 -232.543)"/>
+      </g>
+    </g>
+  </g>
+</svg>
