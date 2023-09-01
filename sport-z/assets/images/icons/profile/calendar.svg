@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26.084" height="28.815" viewBox="0 0 26.084 28.815">
+  <g id="calendar_1_" data-name="calendar (1)" transform="translate(0.75 0.75)">
+    <line id="Ligne_52" data-name="Ligne 52" x2="24.343" transform="translate(0.127 10.112)" fill="none" stroke="#200e32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <line id="Ligne_53" data-name="Ligne 53" x2="0.012" transform="translate(18.358 15.447)" fill="none" stroke="#200e32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <line id="Ligne_54" data-name="Ligne 54" x2="0.012" transform="translate(12.299 15.447)" fill="none" stroke="#200e32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <line id="Ligne_55" data-name="Ligne 55" x2="0.012" transform="translate(6.225 15.447)" fill="none" stroke="#200e32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <line id="Ligne_56" data-name="Ligne 56" x2="0.012" transform="translate(18.358 20.754)" fill="none" stroke="#200e32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <line id="Ligne_57" data-name="Ligne 57" x2="0.012" transform="translate(12.299 20.754)" fill="none" stroke="#200e32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <line id="Ligne_58" data-name="Ligne 58" x2="0.012" transform="translate(6.225 20.754)" fill="none" stroke="#200e32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <line id="Ligne_59" data-name="Ligne 59" y2="4.495" transform="translate(17.815)" fill="none" stroke="#200e32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <line id="Ligne_60" data-name="Ligne 60" y2="4.495" transform="translate(6.782)" fill="none" stroke="#200e32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <path id="Tracé_572" data-name="Tracé 572" d="M18.08,1.579H6.516C2.505,1.579,0,3.813,0,7.92V20.28c0,4.171,2.505,6.457,6.516,6.457H18.067c4.023,0,6.516-2.247,6.516-6.354V7.92C24.6,3.813,22.1,1.579,18.08,1.579Z" transform="translate(0 0.578)" fill="none" stroke="#200e32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" fill-rule="evenodd"/>
+  </g>
+</svg>

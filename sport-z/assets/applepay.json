@@ -1,0 +1,20 @@
+{
+  "provider": "apple_pay",
+  "data": {
+    "merchantIdentifier": "merchant.com.makeitcreative.sportz",
+    "displayName": "Sport'Z",
+    "merchantCapabilities": ["3DS", "debit", "credit"],
+    "supportedNetworks": ["amex", "visa", "discover", "masterCard"],
+    "countryCode": "FR",
+    "currencyCode": "EUR",
+    "requiredBillingContactFields": ["emailAddress", "name", "phoneNumber", "postalAddress"],
+    "requiredShippingContactFields": [],
+    "shippingMethods": [
+      {
+        "amount": "2.99",
+        "detail": "Available within an hour",
+        "identifier": "in_store_pickup",
+        "label": "In-Store Pickup"
+      }   ]
+  }
+}
