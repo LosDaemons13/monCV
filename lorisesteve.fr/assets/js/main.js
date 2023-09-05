@@ -35,16 +35,19 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 const skillsContent = document.getElementsByClassName('skills__content'),
     skillsHeader = document.querySelectorAll('.skills__header')
 
-function toggleSkills(){
-    let itemClass = this.parentNode.className
-
-    for(i = 0; i < skillsContent.length; i++){
-        skillsContent[i].className = 'skills__content skills__close'
+    function toggleSkills() {
+        let itemClass = this.parentNode.className;
+    
+        for (i = 0; i < skillsContent.length; i++) {
+            skillsContent[i].className = 'skills__content skills__close';
+        }
+    
+        if (itemClass === 'skills__content skills__close') {
+            this.parentNode.className = 'skills__content skills__open';
+            // Ajoutez cette ligne pour faire défiler jusqu'à l'élément ouvert
+            this.parentNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
     }
-    if(itemClass === 'skills__content skills__close'){
-        this.parentNode.className = 'skills__content skills__open'
-    }
-}
 
 skillsHeader.forEach((el) =>{
     el.addEventListener('click', toggleSkills)
@@ -71,27 +74,39 @@ tabs.forEach(tab =>{
 })
 
 /*==================== SERVICES MODAL ====================*/
-const modalViews = document.querySelectorAll('.services__modal'),
-    modalBtns = document.querySelectorAll('.services__button'),
-    modalClose = document.querySelectorAll('.services__modal-close')
+const modalViews = document.querySelectorAll('.services__modal');
+const modalBtns = document.querySelectorAll('.services__button');
+const modalClose = document.querySelectorAll('.services__modal-close');
 
-let modal = function(modalClick){
-    modalViews[modalClick].classList.add('active-modal')
+function openModal(modalClick) {
+    modalViews[modalClick].classList.add('active-modal');
 }
 
-modalBtns.forEach((modalBtn, i) =>{
-    modalBtn.addEventListener('click', () =>{
-        modal(i)
-    })
-})
+function closeModal() {
+    modalViews.forEach((modalView) => {
+        modalView.classList.remove('active-modal');
+    });
+}
 
-modalClose .forEach((modalClose) =>{
-    modalClose.addEventListener('click', () =>{
-        modalViews.forEach((modalView) =>{
-            modalView.classList.remove('active-modal')
-        })
-    })
-})
+modalBtns.forEach((modalBtn, i) => {
+    modalBtn.addEventListener('click', () => {
+        openModal(i);
+    });
+});
+
+modalClose.forEach((modalCloseBtn) => {
+    modalCloseBtn.addEventListener('click', () => {
+        closeModal();
+    });
+});
+
+modalViews.forEach((modalOverlay) => {
+    modalOverlay.addEventListener('click', (event) => {
+        if (event.target === modalOverlay) {
+            closeModal();
+        }
+    });
+});
 
 /*==================== PORTFOLIO SWIPER  ====================*/
 let swiperPortfolio = new Swiper('.portfolio__container', {

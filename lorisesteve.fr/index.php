@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="icon" type="image/png" href="assets/img/logo.png">
@@ -73,7 +73,7 @@
                 <img src="assets/img/about2.png" alt="" class="about__img">
 
                 <div class="about_data">
-                    <p class="about__description">Animé par le goût du challenge, j'aime me lancer des défis et sortir de ma zone de confort.<br>Mon esprit d'équipe, mon aisance relationnelle et mes bonnes capacités d'adaptation font de moi quelqu'un qui valorise le partage et la communication.<br><br>Passionné par l'informatique depuis mon enfance, j'ai toujours aspiré à exercer un métier dans ce secteur.<br>Les nouvelles technologies et l'informatique en général suscitent en moi une réelle passion. En plus du goût du challenge et de l'aptitude à sortir de ma zone de confort, j'aime apprendre de manière autonome de nouvelles technologies et de nouveaux logiciels.<br>L'esprit d'équipe, le partage et la communication revêtent une importance capitale à mes yeux.<br><br>Je serai disponible dès le 18 Octobre et je possède un permis de conduire.<br>Mon parcours et mes caractéristiques font de moi un candidat désireux d'intégrer un environnement stimulant où je pourrais contribuer tout en continuant à me développer.</p>
+                    <p class="about__description">Animé par le goût du challenge, j'aime me lancer des défis et sortir de ma zone de confort.<br>Mon esprit d'équipe, mon aisance relationnelle et mes bonnes capacités d'adaptation font de moi quelqu'un qui valorise le partage et la communication.<br><br>Passionné par l'informatique depuis mon enfance, j'ai toujours aspiré à exercer un métier dans ce secteur.<br>Les nouvelles technologies et l'informatique en général suscitent en moi une réelle passion. En plus du goût du challenge et de l'aptitude à sortir de ma zone de confort, j'aime apprendre de manière autonome de nouvelles technologies et de nouveaux logiciels.<br>L'esprit d'équipe, le partage et la communication revêtent une importance capitale à mes yeux.<br><br>Disponible dès le 18 Octobre.<br>Mon parcours et mes caractéristiques font de moi un candidat désireux d'intégrer un environnement stimulant où je pourrais contribuer tout en continuant à me développer.</p>
                     <div class="about__info">
                         <div class="about__card">
                             <span class="about__info-title">4 ans</span>
@@ -197,72 +197,43 @@
                             <div class="skills__container__list">
                                 <div class="skills__img">
                                     <img src="assets/img/flutter.svg" />
+                                    <img src="assets/img/dart.svg" />
                                 </div>
                                 <div class="skills__data">
                                     <div class="skills__titles">
-                                        <h3 class="skills__name">Flutter</h3>
-                                        <span class="skills__number">60%</span>
+                                        <h3 class="skills__name">Flutter / Dart</h3>
+                                        <span class="skills__number">70%</span>
                                     </div>
                                     <div class="skills__bar">
-                                        <span class="skills__percentage skills__vuejs"></span>
+                                        <span class="skills__percentage skills__flutter"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skills__container__list">
+                                <div class="skills__img">
+                                    <img src="assets/img/wordpress.svg" />
+                                    <img src="assets/img/elementor.svg" />
+                                </div>
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">WordPress / Elementor</h3>
+                                        <span class="skills__number">80%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__wordpress"></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="skills__content skills__close">
-                    <div class="skills__header">
-                        <i class="uil uil-server-network skills__icon"></i>
-
-                        <div>
-                            <h1 class="skills__titles">Back-End</h1>
-                        </div>
-
-                        <i class="uil uil-angle-down skills__arrow"></i>
-                    </div>
-
-                    <div class="skills__list grid">
-                        <div class="skills__container__list">
-                            <div class="skills__img">
-                                <img src="assets/img/php.svg" />
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">PHP</h3>
-                                    <span class="skills__number">60%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__php"></span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="skills__container__list">
-                            <div class="skills__img">
-                                <img src="assets/img/python.svg" />
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Python</h3>
-                                    <span class="skills__number">20%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__python"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
                     <div class="skills__content skills__close">
                         <div class="skills__header">
-                            <i class="uil uil-palette skills__icon"></i>
+                            <i class="uil uil-server-network skills__icon"></i>
 
                             <div>
-                                <h1 class="skills__titles">Design Graphique</h1>
+                                <h1 class="skills__titles">Back-End</h1>
                             </div>
 
                             <i class="uil uil-angle-down skills__arrow"></i>
@@ -271,53 +242,113 @@
                         <div class="skills__list grid">
                             <div class="skills__container__list">
                                 <div class="skills__img">
-                                    <img src="assets/img/photoshop.svg" />
+                                    <img src="assets/img/php.svg" />
                                 </div>
                                 <div class="skills__data">
                                     <div class="skills__titles">
-                                        <h3 class="skills__name">Photoshop</h3>
-                                        <span class="skills__number">80%</span>
+                                        <h3 class="skills__name">PHP</h3>
+                                        <span class="skills__number">60%</span>
                                     </div>
                                     <div class="skills__bar">
-                                        <span class="skills__percentage skills__photoshop"></span>
+                                        <span class="skills__percentage skills__php"></span>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="skills__container__list">
                                 <div class="skills__img">
-                                    <img src="assets/img/illustrator.svg" />
+                                    <img src="assets/img/mysql.svg" />
                                 </div>
                                 <div class="skills__data">
                                     <div class="skills__titles">
-                                        <h3 class="skills__name">Illustrator</h3>
-                                        <span class="skills__number">80%</span>
+                                        <h3 class="skills__name">MySQL</h3>
+                                        <span class="skills__number">60%</span>
                                     </div>
                                     <div class="skills__bar">
-                                        <span class="skills__percentage skills__illustrator"></span>
+                                        <span class="skills__percentage skills__mysql"></span>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="skills__container__list">
                                 <div class="skills__img">
-                                    <img src="assets/img/xd.svg" />
+                                    <img src="assets/img/python.svg" />
                                 </div>
                                 <div class="skills__data">
                                     <div class="skills__titles">
-                                        <h3 class="skills__name">Adobe XD</h3>
-                                        <span class="skills__number">80%</span>
+                                        <h3 class="skills__name">Python</h3>
+                                        <span class="skills__number">20%</span>
                                     </div>
                                     <div class="skills__bar">
-                                        <span class="skills__percentage skills__xd"></span>
+                                        <span class="skills__percentage skills__python"></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-            </div>
+                    <div>
+                        <div class="skills__content skills__close">
+                            <div class="skills__header">
+                                <i class="uil uil-palette skills__icon"></i>
+
+                                <div>
+                                    <h1 class="skills__titles">Design Graphique</h1>
+                                </div>
+
+                                <i class="uil uil-angle-down skills__arrow"></i>
+                            </div>
+
+                            <div class="skills__list grid">
+                                <div class="skills__container__list">
+                                    <div class="skills__img">
+                                        <img src="assets/img/photoshop.svg" />
+                                    </div>
+                                    <div class="skills__data">
+                                        <div class="skills__titles">
+                                            <h3 class="skills__name">Photoshop</h3>
+                                            <span class="skills__number">60%</span>
+                                        </div>
+                                        <div class="skills__bar">
+                                            <span class="skills__percentage skills__photoshop"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skills__container__list">
+                                    <div class="skills__img">
+                                        <img src="assets/img/illustrator.svg" />
+                                    </div>
+                                    <div class="skills__data">
+                                        <div class="skills__titles">
+                                            <h3 class="skills__name">Illustrator</h3>
+                                            <span class="skills__number">60%</span>
+                                        </div>
+                                        <div class="skills__bar">
+                                            <span class="skills__percentage skills__illustrator"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skills__container__list">
+                                    <div class="skills__img">
+                                        <img src="assets/img/xd.svg" />
+                                    </div>
+                                    <div class="skills__data">
+                                        <div class="skills__titles">
+                                            <h3 class="skills__name">Adobe XD</h3>
+                                            <span class="skills__number">50%</span>
+                                        </div>
+                                        <div class="skills__bar">
+                                            <span class="skills__percentage skills__xd"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
             <h2 class="section__title">Compétences générales</h2>
             <span class="section__subtitle">Soft skills</span>
@@ -336,63 +367,99 @@
                         </div>
 
                         <div class="skills__list grid" id="myself">
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Autonomie</h3>
-                                    <span class="skills__number">90%</span>
+                            <div class="skills__container__list">
+                                <div class="skills__img">
+                                    <img src="assets/img/autonomous.png" />
                                 </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__autonomy"></span>
-                                </div>
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Capacité d'adaptation / flexibilité</h3>
-                                    <span class="skills__number">100%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__adaptability"></span>
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">Autonomie</h3>
+                                        <span class="skills__number">90%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__autonomy"></span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Créativité</h3>
-                                    <span class="skills__number">70%</span>
+
+                            <div class="skills__container__list">
+                                <div class="skills__img">
+                                    <img src="assets/img/flexible.png" />
                                 </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__creativity"></span>
-                                </div>
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Management</h3>
-                                    <span class="skills__number">70%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__management"></span>
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">Capacité d'adaptation / flexibilité</h3>
+                                        <span class="skills__number">100%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__adaptability"></span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Esprit d’équipe</h3>
-                                    <span class="skills__number">100%</span>
+
+                            <div class="skills__container__list">
+                                <div class="skills__img">
+                                    <img src="assets/img/creativity.png" />
                                 </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__team-spirit"></span>
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">Créativité</h3>
+                                        <span class="skills__number">70%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__creativity"></span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Prise de décision</h3>
-                                    <span class="skills__number">50%</span>
+
+                            <div class="skills__container__list">
+                                <div class="skills__img">
+                                    <img src="assets/img/management.png" />
                                 </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__decision-making"></span>
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">Management</h3>
+                                        <span class="skills__number">50%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__management"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skills__container__list">
+                                <div class="skills__img">
+                                    <img src="assets/img/team-spirit.png" />
+                                </div>
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">Esprit d’équipe</h3>
+                                        <span class="skills__number">100%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__team-spirit"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skills__container__list">
+                                <div class="skills__img">
+                                    <img src="assets/img/decision-making.png" />
+                                </div>
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">Prise de décision</h3>
+                                        <span class="skills__number">50%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__decision-making"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
 
         <section class="qualification section" id="qualifications">
@@ -416,14 +483,14 @@
                     <div class="qualification__content qualification__active" data-content id="education">
                         <div class="qualification__data">
                             <div class="qualification__card">
-                                <h3 class="qualification__title">Titre RNCP 7 | Chef de projet systèmes d'information - Numérique & Management</h3>
+                                <h3 class="qualification__title">Titre RNCP 7 | Concepteur et développeur d'application - Chef de projet systèmes d'information - Numérique & Management</h3>
                                 <span class="qualification__subtitle">
                                     <br />
                                     <ul>
-                                        <li>Projet de groupe sur la création de site web vitrine et e-commerce pour le club de basket de Salon-de-Provence PSB13 en CakePHP et ReactJS (Développeur)<br />Dans ce projet j'ai également eu l'occasion de gérer pendant une semaine une équipe de 4 développeurs de l'Institut G4 en première année</li>
+                                        <li>Projet de groupe sur la création de site web vitrine et e-commerce et d'un back office pour le club de basket de Salon-de-Provence PSB13 en CakePHP et ReactJS pour un vrai client (Développeur)<br />Dans ce projet j'ai également eu l'occasion de gérer pendant une semaine une équipe de 4 développeurs de l'Institut G4 en première année</li>
                                         <li>Projet de groupe sur la création d'une application sportive de rencontre en Flutter (Développeur)</li>
                                         <li>Projet de groupe sur la création d'une mascotte pour l'Institut G4 (Développeur)</li>
-                                        <li>Projet de groupe sur la création d'un site vitrine pour un musée de marseille (Développeur + Designer (charte graphique))</li>
+                                        <li>Projet de groupe sur la création d'un site vitrine pour un musée fictif de marseille (Développeur + Designer (charte graphique))</li>
                                     </ul>
                                     <br />
                                     Institut G4, Marseille
@@ -452,10 +519,11 @@
                                 <span class="qualification__subtitle">
                                     <br />
                                     <ul>
-                                        <li>Projet de groupe sur une station météo (Client – Serveur TCP, Micro base de données)</li>
-                                        <li>Création d'interfaces homme-machine avec QT Creator</li>
-                                        <li>Avis très favorable, Tableau d'honneur</li>
+                                        <li>Projet de groupe sur une station météo en C++ (Client et serveur TCP, récupèration et affichage de données dans un logiciel, micro base de données)</li>
+                                        <li>Création d'interfaces homme-machine avec QT Creator connectées avec des capteurs, leds</li>
                                     </ul>
+                                    <br />
+                                    Avis très favorable, Tableau d'honneur
                                     <br />
                                     Lycée Jean Perrin, Marseille
                                 </span>
@@ -496,18 +564,23 @@
                                     <br />
                                     <ul>
                                         <li>Création et maintenance de sites web vitrines avec WordPress (<a href="https://pbsformation.fr" target="_blank">pbsformation.fr</a> et <a href="https://d-learning.fr" target="_blank">d-learning.fr</a>)</li>
-                                        <li>Création de système d'export de base de donnée en PHP</li>
-                                        <li>Création d'un outil de création de sites web statiques avec Gatsby en React</li>
+                                        <li>Création d'un outil de création de sites web avec Gatsby en React et Python</li>
                                         <li>Création de plateforme de formations e-learning sur WordPress avec le plugin LMS LearnDash</li>
-                                        <li>Front-End CRM crée sur mesure</li>
+                                        <li>Création d'un CRM sur mesure pour la gestion de stagiaires</li>
+                                        <li>Création de plugins WordPress pour la création personnalisée de templates de mail</li>
                                     </ul>
                                     <br />
-                                    Tekzone et Professional Business School, Marseille
+                                    Tekzone, Marseille
+                                    <div class="qualification__calendar">
+                                        <i class="uil uil-calendar-alt"></i>
+                                        2020 - 2021
+                                    </div>
+                                    Professional Business School, Marseille
+                                    <div class="qualification__calendar">
+                                        <i class="uil uil-calendar-alt"></i>
+                                        2021 - 2023
+                                    </div>
                                 </span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2020 - 2023
-                                </div>
                             </div>
 
                             <div>
@@ -597,42 +670,10 @@
             <span class="section__subtitle">Ce que je propose</span>
 
             <div class="services__container container grid">
+
                 <div class="services__content">
                     <div>
-                        <i class="uil uil-web-grid services__icon"></i>
-                        <h3 class="services__title">Ui/Ux <br /> Designer</h3>
-                    </div>
-
-                    <span class="button button--flex button--small button--link services__button">
-                        Voir plus
-                        <i class="uil uil-arrow-right button__icon"></i>
-                    </span>
-
-                    <div class="services__modal">
-                        <div class="services__modal-content">
-                            <h4 class="services__modal-title">Ui/Ux <br /> Designer</h4>
-                            <i class="uil uil-times services__modal-close"></i>
-
-                            <ul class="services__modal-services grid">
-                                <li class="services__modal-service">
-                                    <i class="uil uil-tear services__modal-icon"></i>
-                                    <p>Liquid design</p>
-                                </li>
-                                <li class="services__modal-service">
-                                    <i class="uil uil-circle services__modal-icon"></i>
-                                    <p>Flat design</p>
-                                </li>
-                                <li class="services__modal-service">
-                                    <i class="uil uil-brush-alt services__modal-icon"></i>
-                                    <p>Modern design</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="services__content">
-                    <div>
-                        <i class="uil uil-arrow services__icon"></i>
+                        <i class="uil uil-brackets-curly services__icon"></i>
                         <h3 class="services__title">Développement <br /> Front-End</h3>
                     </div>
 
@@ -643,7 +684,7 @@
 
                     <div class="services__modal">
                         <div class="services__modal-content">
-                            <h4 class="services__modal-title">Développement <br /> Front-End</h4>
+                            <h4 class="services__modal-title">Développement Front-End</h4>
                             <i class="uil uil-times services__modal-close"></i>
 
                             <ul class="services__modal-services grid">
@@ -655,10 +696,76 @@
                                     <i class="uil uil-euro services__modal-icon"></i>
                                     <p>Site E-Commerce</p>
                                 </li>
+                                </li>
+                                <li class="services__modal-service">
+                                    <i class="uil uil-mobile-android services__modal-icon"></i>
+                                    <p>Application mobile</p>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
+
+                <div class="services__content">
+                    <div>
+                        <i class="uil uil-server-network services__icon"></i>
+                        <h3 class="services__title">Développement <br /> Back-End</h3>
+                    </div>
+
+                    <span class="button button--flex button--small button--link services__button">
+                        Voir plus
+                        <i class="uil uil-arrow-right button__icon"></i>
+                    </span>
+
+                    <div class="services__modal">
+                        <div class="services__modal-content">
+                            <h4 class="services__modal-title">Développement Back-End</h4>
+                            <i class="uil uil-times services__modal-close"></i>
+
+                            <ul class="services__modal-services grid">
+                                <li class="services__modal-service">
+                                    <i class="uil uil-database services__modal-icon"></i>
+                                    <p>Développement d'un back office avec gestion de données (CRUD : Création, lecture, modification et suppression de données en base de données par exemple)</p>
+                                </li>
+                                <li class="services__modal-service">
+                                    <i class="uil uil-data-sharing services__modal-icon"></i>
+                                    <p>Utilisation d'API (requêtes HTTP)</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services__content">
+                    <div>
+                        <i class="uil uil-palette services__icon"></i>
+                        <h3 class="services__title">Ui/Ux <br /> Designer</h3>
+                    </div>
+
+                    <span class="button button--flex button--small button--link services__button">
+                        Voir plus
+                        <i class="uil uil-arrow-right button__icon"></i>
+                    </span>
+
+                    <div class="services__modal">
+                        <div class="services__modal-content">
+                            <h4 class="services__modal-title">Ui/Ux Designer</h4>
+                            <i class="uil uil-times services__modal-close"></i>
+
+                            <ul class="services__modal-services grid">
+                                <li class="services__modal-service">
+                                    <i class="uil uil-tear services__modal-icon"></i>
+                                    <p>Création de maquettes</p>
+                                </li>
+                                <li class="services__modal-service">
+                                    <i class="uil uil-brush-alt services__modal-icon"></i>
+                                    <p>Création de logos</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -670,11 +777,10 @@
                 <div class="swiper-wrapper">
                     <div class="portfolio__content grid swiper-slide">
                         <img src="assets/img/portfolio1.png" alt="" class="portfolio__img">
-
                         <div class="portfolio__data">
                             <h3 class="portfolio__title">Site vitrine musée d'histoire naturelle</h3>
                             <p class="portfolio__description">Flat Design et responsive avec charte graphique personnalisée</p>
-                            <a href="/naturalis-massilia" target="_blank" class="button button--flex button--small portfolio__button">
+                            <a href="/Naturalis Massilia" target="_blank" class="button button--flex button--small portfolio__button">
                                 Demo
                                 <i class="uil uil-arrow-right button__icon"></i>
                             </a>
@@ -716,13 +822,25 @@
                             </a>
                         </div>
                     </div>
+
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/portfolio8.png" alt="" class="portfolio__img">
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Application de rencontre sportive Sport'Z</h3>
+                            <p class="portfolio__description">Application de rencontre sportive en Flutter<br>Création, modification et suppression d'évènements sportfis avec géolocalisation, filtres et chat</p>
+                            <a href="/Sport'Z" target="_blank" class="button button--flex button--small portfolio__button">
+                                Demo
+                                <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
                     <div class="portfolio__content grid swiper-slide">
                         <img src="assets/img/portfolio5.png" alt="" class="portfolio__img">
 
                         <div class="portfolio__data">
                             <h3 class="portfolio__title">Auto-Formation en HTML, CSS et JavaScript</h3>
                             <p class="portfolio__description">Classement Ligue 1, Premier League, Liga, Bundesliga, Serie A utilisant du HTML, du CSS et du JavaScript pour la récupèration des données en asynchrone</p>
-                            <a href="https://lorisesteve.alwaysdata.net/FootJS/" target="_blank" class="button button--flex button--small portfolio__button">
+                            <a href="/Formation JS" target="_blank" class="button button--flex button--small portfolio__button">
                                 Demo
                                 <i class="uil uil-arrow-right button__icon"></i>
                             </a>
@@ -752,6 +870,18 @@
                             </a>
                         </div>
                     </div>
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/portfolio9.png" alt="" class="portfolio__img">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Maintenance et mise à jour du site WordPress <a href="https://tekzone.fr" target="_blank">tekzone.fr</a></h3>
+                            <p class="portfolio__description">Création maintenance et mise à jour du site vitrine <a href="https://tekzone.fr" target="_blank">tekzone.fr</a></p>
+                            <a href="https://tekzone.fr" target="_blank" class="button button--flex button--small portfolio__button">
+                                Demo
+                                <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="swiper-button-next">
@@ -762,6 +892,11 @@
                 </div>
 
                 <div class="swiper-pagination"></div>
+            </div>
+            <!-- Modal pour afficher l'image en grand -->
+            <div id="imageModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="modalImage">
             </div>
         </section>
 
@@ -796,10 +931,10 @@
                      </body>
                   </html>
                   ';
-                mail("contact@lorisesteve.com", "Demande de contact", $message, $headers);
-                $msg = "<span style='color: #155724;background-color: #d4edda;border-color: #c3e6cb;padding: 0.75rem 1.25rem;border-radius: 0.25rem;display: block;';>Votre message a bien été envoyé !</span>";
+                mail("contact@lorisesteve.fr", "Demande de contact de " . $_POST['nom'], $message, $headers);
+                $msg = "<span style='color: #155724;background-color: #d4edda;border-color: #c3e6cb;padding: 0.75rem 1.25rem;border-radius: 0.25rem;display: block;margin-bottom: 30px;';>Votre message a bien été envoyé !</span>";
             } else {
-                $msg = "<span style='color: #721c24;background-color: #f8d7da;border-color: #f5c6cb;padding: 0.75rem 1.25rem;border-radius: 0.25rem;display: block;';>Veuillez compléter tous les champs.";
+                $msg = "<span style='color: #721c24;background-color: #f8d7da;border-color: #f5c6cb;padding: 0.75rem 1.25rem;border-radius: 0.25rem;display: block;margin-bottom: 30px;';>Veuillez compléter tous les champs.";
             }
         }
 
@@ -811,15 +946,19 @@
 
             <div class="contact__container container grid">
                 <div>
-                    <!-- <div class="contact__information">
+                    <div class="contact__information">
                         <i class="uil uil__phone contact__icon"></i>
-                    </div> -->
+                        <div>
+                            <h3 class="contact__title">Par téléphone</h3>
+                            <a href="tel:+33788836128" class="contact__subtitle">07 88 83 61 28</a>
+                        </div>
+                    </div>
                     <div class="contact__information">
                         <i class="uil uil__envelope contact__icon"></i>
 
                         <div>
                             <h3 class="contact__title">Par e-mail</h3>
-                            <a href="mailto:contact@lorisesteve.com" class="contact__subtitle">contact@lorisesteve.com</a>
+                            <a href="mailto:contact@lorisesteve.fr" class="contact__subtitle">contact@lorisesteve.fr</a>
                         </div>
                     </div>
                     <div class="contact__information">
@@ -841,8 +980,8 @@
                     </div>
                     <div class="contact__inputs grid">
                         <div class="contact__content">
-                            <label for="nom" class="contact__label">Nom Prénom ou Nom entreprise</label>
-                            <input type="text" name="nom" id="nom" class="contact__input" placeholder="Entrez votre nom prénom ou non d'entreprise" value="<?php if (isset($_POST['nom'])) {
+                            <label for="nom" class="contact__label">Nom et Prénom ou Nom d'entreprise</label>
+                            <input type="text" name="nom" id="nom" class="contact__input" placeholder="Entrez votre nom prénom ou nom d'entreprise" value="<?php if (isset($_POST['nom'])) {
                                                                                                                                                                 echo $_POST['nom'];
                                                                                                                                                             } ?>" />
                         </div>

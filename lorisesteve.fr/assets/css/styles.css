@@ -12,6 +12,7 @@
 
     /* HSL color mode */
     --first-color: hsl(var(--hue-color), 100%, 42%);
+    --first-color-menu: hsla(var(--hue-color), 100%, 42%, 0.1); /* 0.5 représente l'opacité, où 1 est totalement opaque et 0 est totalement transparent */
     --first-color-second: hsl(var(--hue-color), 100%, 42%);
     --first-color-alt: hsl(var(--hue-color), 100%, 33%);
     --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
@@ -129,7 +130,7 @@ h4 {
     font-weight: var(--font-semi-bold);
 }
 
-ul {
+ul, li {
     list-style: none;
 }
 
@@ -295,7 +296,7 @@ img {
 .button {
     display: inline-block;
     background-color: var(--first-color);
-    color: #FFF;
+    color: #FFF!important;
     padding: 1rem;
     border-radius: 0.5rem;
     font-weight: var(--font-medium);
@@ -313,7 +314,7 @@ img {
 
 .button--white {
     background-color: #FFF;
-    color: var(--first-color);
+    color: var(--first-color)!important;
 }
 
 .button--white:hover {
@@ -333,7 +334,7 @@ img {
 .button--link {
     padding: 0;
     background-color: transparent;
-    color: var(--first-color);
+    color: var(--first-color)!important;
 }
 
 .button--link:hover {
@@ -377,7 +378,7 @@ img {
 }
 
 .about__card {
-    background-color: #f2f1f1;
+    background-color: var(--container-color);
     padding: 20px;
     width: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
@@ -386,7 +387,7 @@ img {
 .about__info-title {
     font-size: var(--h2-font-size);
     font-weight: var(--font-semi-bold);
-    color: #232829;
+    color: var(--title-color);
 }
 
 .about__info-name {
@@ -421,6 +422,7 @@ img {
 
 .skills__container__list {
     display: flex;
+    align-items: center;
 }
 
 .skills__data {
@@ -434,6 +436,8 @@ img {
 .skills__img {
     width: auto;
     padding-right: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .skills__header {
@@ -480,6 +484,7 @@ img {
 .skills__list img {
     width: 50px;
     height: 50px;
+    object-fit: contain;
 }
 
 .skills__titles {
@@ -540,6 +545,10 @@ img {
     width: 60%;
 }
 
+.skills__mysql {
+    width: 60%;
+}
+
 .skills__plugins__php {
     width: 50%;
 }
@@ -557,7 +566,7 @@ img {
 }
 
 .skills__xd {
-    width: 70%;
+    width: 50%;
 }
 
 .skills__autonomy {
@@ -573,14 +582,14 @@ img {
 }
 
 .skills__management {
-    width: 70%;
+    width: 50%;
 }
 
 .skills__team-spirit {
     width: 100%;
 }
 
-.skills__skills__decision {
+.skills__decision-making {
     width: 50%;
 }
 
@@ -595,7 +604,6 @@ img {
     padding: 1.25rem 1.5rem;
     border-radius: 0.25rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
-    transition: 0.3s;
     margin: 0 0 20px;
     top: -2.5rem;
     position: relative;
@@ -624,7 +632,6 @@ img {
 
 .qualification__tabs {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     margin-bottom: var(--mb-2);
@@ -641,7 +648,6 @@ img {
     color: var(--first-color);
     opacity: 1;
 }
-
 
 .qualification__icon {
     font-size: 1.8rem;
@@ -665,6 +671,16 @@ img {
     display: inline-block;
     font-size: var(--small-font-size);
     margin-bottom: var(--mb-1);
+}
+
+.qualification__subtitle ul {
+    padding: 0 1rem;
+    list-style: disc;
+}
+
+.qualification__subtitle li {
+    padding: 0.3rem 0;
+    list-style: disc;
 }
 
 .qualification__calendar {
@@ -715,7 +731,11 @@ img {
     margin: 20px auto;
 }
 
-.services__content:hover {
+.qualification__card, .services__content, .about__card {
+    transition: 0.3s;
+}
+
+.services__content:hover, .qualification__card:hover, .services__content:hover, .skills__header:hover, .about__card:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, .15);
 }
 
@@ -763,7 +783,7 @@ img {
     background-color: var(--container-color);
     padding: 1.5rem;
     border-radius: 0.5rem;
-    width: 450px;
+    width: 800px;
 }
 
 .services__modal-services {
@@ -861,7 +881,77 @@ img {
 .swiper-pagination-bullet {
     outline: none;
 }
+/* Style pour la loupe */
+.image-container {
+    position: relative;
+    cursor: pointer;
+}
 
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.image-container:hover .image-overlay {
+    opacity: 1;
+}
+
+.image-zoom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.image-container:hover .image-zoom {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+
+/* Style pour la modale */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-height: 80%;
+    position: relative;
+    top: 50px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+}
 /*==================== PROJECT IN MIND ====================*/
 .project {
     text-align: center;
@@ -931,10 +1021,14 @@ img {
     border: none;
     outline: none;
     background-color: var(--container-color);
-    padding: 1.25rem 1.5rem;
+    padding: 0.575rem 0.75rem;
     border-radius: 0.25rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
+    -webkit-appearance: none;
     margin-top: 0.5rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .contact__input:focus {
@@ -1074,6 +1168,13 @@ img {
 }
 
 /*==================== MEDIA QUERIES ====================*/
+
+@media screen and (max-width: 300px) {
+    .qualification__tabs {
+        flex-direction: column;
+    }
+}
+
 /* For small devices */
 @media screen and (max-width: 376px) {
     .container {
@@ -1247,7 +1348,9 @@ img {
     }
 
     .portfolio__img {
-        width: 320px;
+        width: 400px;
+        height: 200px;
+        object-fit: contain;
     }
 
     .portfolio__content {
@@ -1301,9 +1404,17 @@ img {
         padding: 0 1rem;
     }
 
+    .skills__img {
+        gap: 1rem;
+    }
+
     .services__container {
         display: flex;
         grid-template-columns: repeat(2, 238px);
+    }
+
+    .portfolio__data {
+        padding-right: 6rem;
     }
 
     .portfolio__content {
